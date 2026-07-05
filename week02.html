@@ -1,0 +1,1087 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Coding — เขียนโค้ดยุค AI | Special Topic 1 - วิศวกรรมคอมพิวเตอร์</title>
+  <meta name="description" content="สื่อการสอนเรื่อง Vibe Coding — เขียนโปรแกรมด้วยการบอกความต้องการให้ AI ช่วยสร้าง เรียนรู้จากการมอง ดู อ่าน และลงมือทำตาม" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=6" />
+</head>
+<body>
+
+  <!-- ===== SVG sprite ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.26.82-.57 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.09 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.46-2.34 1.24-3.16-.12-.3-.54-1.5.12-3.12 0 0 1-.32 3.3 1.21.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.29-1.53 3.29-1.21 3.29-1.21.66 1.62.24 2.82.12 3.12.77.82 1.23 1.87 1.23 3.16 0 4.53-2.81 5.53-5.49 5.82.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .31.22.69.83.57A12.02 12.02 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9.2l-4.4 1.6L12 15l-1.6-4.2L6 9.2l4.4-1.6z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/><path d="M5 4l.6 1.6L7 6.2l-1.4.6L5 8l-.6-1.2L3 6.2l1.4-.6z"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="i-balance" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M12 6l-7 3 7 3 7-3z" fill="none"/><path d="M5 9l-2.5 5a2.5 2.5 0 0 0 5 0z"/><path d="M19 9l-2.5 5a2.5 2.5 0 0 0 5 0z"/><line x1="7" y1="20" x2="17" y2="20"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-tool2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Top progress bar ===== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ===== Mobile menu button ===== -->
+  <button class="menu-toggle" id="menuToggle" aria-label="เปิด/ปิดเมนู">
+    <svg class="icon"><use href="#i-menu"></use></svg>
+  </button>
+
+  <!-- ===== Sidebar navigation ===== -->
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="index.html" title="กลับหน้ารวมรายวิชา">
+      <span class="brand-icon brand-vibe"><svg class="icon"><use href="#i-sparkles"></use></svg></span>
+      <div>
+        <strong>Vibe Coding</strong>
+        <small>Special Topic 1 · สัปดาห์ 2</small>
+      </div>
+    </a>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link nav-home"><svg class="icon"><use href="#i-home"></use></svg> หน้ารวมรายวิชา</a>
+      <a href="#home" class="nav-link active"><svg class="icon"><use href="#i-sparkles"></use></svg> เกริ่นนำ</a>
+      <div class="nav-sec">เข้าใจแนวคิด</div>
+      <a href="#what" class="nav-link"><svg class="icon"><use href="#i-help"></use></svg> Vibe Coding คืออะไร</a>
+      <a href="#history" class="nav-link"><svg class="icon"><use href="#i-flag"></use></svg> กว่าจะมาเป็น Vibe Coding</a>
+      <a href="#brain" class="nav-link"><svg class="icon"><use href="#i-zap"></use></svg> AI คิดยังไง</a>
+      <a href="#brain3d" class="nav-link"><svg class="icon"><use href="#i-cpu"></use></svg> ส่องสมอง AI แบบ 3 มิติ</a>
+      <a href="#compare" class="nav-link"><svg class="icon"><use href="#i-balance"></use></svg> แบบเดิม vs Vibe</a>
+      <a href="#playground" class="nav-link"><svg class="icon"><use href="#i-play"></use></svg> ลองเล่นซิมูเลเตอร์</a>
+      <div class="nav-sec">ฝึกทักษะ</div>
+      <a href="#loop" class="nav-link"><svg class="icon"><use href="#i-refresh"></use></svg> วงจรการทำงาน</a>
+      <a href="#session" class="nav-link"><svg class="icon"><use href="#i-cpu"></use></svg> ห้องจำลอง Vibe Session</a>
+      <a href="#prompt" class="nav-link"><svg class="icon"><use href="#i-chat"></use></svg> ศิลปะการสั่ง AI</a>
+      <a href="#patterns" class="nav-link"><svg class="icon"><use href="#i-layers"></use></svg> เทคนิค Prompt 6 ท่า</a>
+      <a href="#activity" class="nav-link"><svg class="icon"><use href="#i-users"></use></svg> โจทย์ฝึก: มนุษย์ AI</a>
+      <a href="#tools" class="nav-link"><svg class="icon"><use href="#i-tool"></use></svg> เครื่องมือ AI</a>
+      <a href="#goodbad" class="nav-link"><svg class="icon"><use href="#i-alert"></use></svg> ข้อดี / ข้อควรระวัง</a>
+      <a href="#buggame" class="nav-link"><svg class="icon"><use href="#i-bug"></use></svg> เกมจับผิดโค้ด AI</a>
+      <div class="nav-sec">โจทย์ + แบบทดสอบ</div>
+      <a href="#workflow" class="nav-link"><svg class="icon"><use href="#i-branch"></use></svg> เชื่อมกับ GitHub</a>
+      <a href="#workshop" class="nav-link"><svg class="icon"><use href="#i-clipboard"></use></svg> โจทย์ใหญ่: เว็บโปรไฟล์</a>
+      <a href="#ethics" class="nav-link"><svg class="icon"><use href="#i-shield"></use></svg> จรรยาบรรณ + อนาคต</a>
+      <a href="#quiz" class="nav-link"><svg class="icon"><use href="#i-award"></use></svg> แบบทดสอบท้ายบท</a>
+      <a href="#faq" class="nav-link"><svg class="icon"><use href="#i-help"></use></svg> คำถามพบบ่อย</a>
+      <a href="#resources" class="nav-link"><svg class="icon"><use href="#i-book"></use></svg> แหล่งเรียนรู้</a>
+    </nav>
+    <div class="sidebar-footer">
+      <small>สาขาวิชาวิศวกรรมคอมพิวเตอร์</small>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== Main content ===== -->
+  <main class="content">
+
+    <!-- HOME -->
+    <section id="home" class="hero hero-vibe">
+      <span class="hero-logo hero-logo-vibe"><svg class="icon"><use href="#i-sparkles"></use></svg></span>
+      <div class="hero-badge">Special Topic 1 · สัปดาห์ที่ 2</div>
+      <h1><span class="grad">Vibe Coding</span><br />เขียนโค้ดยุค AI</h1>
+      <p class="hero-sub">
+        เขียนโปรแกรมด้วยการ "บอกสิ่งที่อยากได้" เป็นภาษาคน แล้วให้ AI ช่วยสร้างโค้ดให้
+        เราทำหน้าที่เป็น "คนกำกับ" คอยตรวจและปรับจนได้ผลลัพธ์ที่ต้องการ
+      </p>
+      <div class="hero-actions">
+        <a href="#what" class="btn btn-primary">เริ่มเรียน →</a>
+        <a href="#playground" class="btn btn-ghost">ข้ามไปลองเล่น</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>2025</strong><span>ปีที่คำนี้เกิด</span></div>
+        <div class="stat"><strong>70%+</strong><span>นักพัฒนาใช้ AI ช่วยเขียนโค้ด</span></div>
+        <div class="stat"><strong>นาที</strong><span>จากไอเดียสู่ผลลัพธ์</span></div>
+        <div class="stat"><strong>ฟรี</strong><span>เครื่องมือให้เริ่มต้น</span></div>
+      </div>
+    </section>
+
+
+    <!-- WHAT -->
+    <section id="what" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-help"></use></svg> Vibe Coding คืออะไร</h2>
+      <p>
+        <b>Vibe Coding</b> คือวิธีเขียนโปรแกรมแนวใหม่ที่เรา<b>อธิบายสิ่งที่อยากได้เป็นภาษาคน</b>
+        (เรียกว่า <span class="term-inline">prompt</span>) แล้วให้ AI ช่วยเขียนโค้ดให้ จากนั้นเรา<b>รันดูผล</b>
+        ถ้ายังไม่ถูกใจก็บอกให้ AI ปรับ วนแบบนี้ไปเรื่อย ๆ จนได้งานที่ต้องการ —
+        โดยที่เราไม่ต้องจำทุกไวยากรณ์ของภาษาเอง
+      </p>
+
+      <div class="quote-box">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          มีการเขียนโค้ดแบบใหม่ที่ผมเรียกว่า <b>vibe coding</b> — คุณปล่อยตัวไปกับ "ฟีล"
+          เชื่อในพลังของ AI และแทบลืมไปเลยว่าโค้ดข้างในหน้าตาเป็นยังไง
+        </p>
+        <div class="quote-by">
+          <img class="quote-avatar" src="assets/karpathy.png" alt="Andrej Karpathy" width="42" height="42" loading="lazy" />
+          <span>— Andrej Karpathy (อดีตนักวิจัย OpenAI / Tesla), กุมภาพันธ์ 2025 ผู้ตั้งคำนี้ขึ้นมา</span>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div>
+          <b>พูดง่าย ๆ:</b> เมื่อก่อนเราต้อง "พิมพ์โค้ดทุกบรรทัดเอง"
+          แต่ Vibe Coding เปลี่ยนบทบาทเราเป็น <b>"คนออกแบบและสั่งงาน"</b>
+          ส่วน AI เป็น "ลูกมือ" ที่พิมพ์โค้ดให้ — แต่คนตัดสินใจและตรวจงานยังเป็นเราเสมอ
+        </div>
+      </div>
+
+      <div class="mini-cards">
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-chat"></use></svg></span>
+          <h3>บอกเป็นภาษาคน</h3>
+          <p>สั่งงานด้วยประโยคธรรมดา ไม่ต้องเริ่มจากไวยากรณ์เป๊ะ ๆ</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-cpu"></use></svg></span>
+          <h3>AI สร้างโค้ด</h3>
+          <p>โมเดล AI (LLM) แปลงคำสั่งของเราเป็นโค้ดที่รันได้จริง</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-eye"></use></svg></span>
+          <h3>เราตรวจและปรับ</h3>
+          <p>ดูผล ทดสอบ แล้วบอกให้ปรับ จนได้งานที่ถูกต้องและเข้าใจได้</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="history" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-flag"></use></svg> กว่าจะมาเป็น Vibe Coding</h2>
+      <p>
+        Vibe Coding ไม่ได้โผล่มาจากไหนก็ไม่รู้ — มันคือปลายทางของการพัฒนา AI ช่วยเขียนโค้ดที่ต่อเนื่องมาราว 5 ปี
+        แต่ละก้าวทำให้ "คนสั่ง" กับ "เครื่องเขียน" ขยับเข้าใกล้กันขึ้นเรื่อย ๆ
+      </p>
+
+      <div class="kp-card">
+        <figure class="kp-photo">
+          <img src="assets/karpathy.png" alt="ภาพถ่าย Andrej Karpathy" width="240" height="320" loading="lazy" />
+          <figcaption>
+            ภาพ: Gladwin Analytics · Wikimedia Commons<br />
+            สัญญาอนุญาต <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
+          </figcaption>
+        </figure>
+        <div class="kp-info">
+          <div class="kp-name">
+            Andrej Karpathy
+            <span class="kp-role">ผู้บัญญัติคำว่า “Vibe Coding”</span>
+          </div>
+          <p class="kp-lead">
+            หนึ่งในนักวิจัย AI ที่มีอิทธิพลที่สุดในโลก งานสอนและงานวิจัยของเขาวางรากฐานให้คนทั้งวงการ
+            เข้าใจ Deep Learning — และในปี 2025 โพสต์สั้น ๆ ของเขาก็ทำให้ “Vibe Coding” กลายเป็นคำที่ทั้งโลกพูดถึง
+          </p>
+          <ul class="kp-facts">
+            <li><span class="kp-yr">2558–60</span><span>สร้างและสอนวิชา <b>CS231n</b> ที่ Stanford — คลาส Deep Learning ในตำนานที่คนทั่วโลกเรียนตาม</span></li>
+            <li><span class="kp-yr">2558, 2566</span><span>สมาชิก<b>ผู้ก่อตั้ง OpenAI</b> (ทีมเบื้องหลัง ChatGPT)</span></li>
+            <li><span class="kp-yr">2560–65</span><span>ผู้อำนวยการฝ่าย AI และ Autopilot ที่ <b>Tesla</b> ดูแลระบบขับเคลื่อนอัตโนมัติ</span></li>
+            <li><span class="kp-yr">2567 (2024)</span><span>ก่อตั้ง <b>Eureka Labs</b> แพลตฟอร์มสอน AI + ซีรีส์เรียนฟรี “Zero to Hero” และติด Time 100 ผู้ทรงอิทธิพลด้าน AI</span></li>
+            <li><span class="kp-yr">ก.พ. 2568</span><span>บัญญัติคำว่า <b>“Vibe Coding”</b> — ที่เรากำลังเรียนกันวันนี้</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="htl" id="htl">
+        <div class="htl-item">
+          <div class="htl-year">2021</div>
+          <div class="htl-body">
+            <h3>GitHub Copilot เปิดตัว</h3>
+            <p>AI ตัวแรกที่นักพัฒนาทั่วโลกใช้จริงในวงกว้าง — เดาโค้ดบรรทัดถัดไปให้ขณะพิมพ์ (autocomplete) ยังต้องเขียนเองเป็นหลัก AI แค่ "ช่วยเติม"</p>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2022</div>
+          <div class="htl-body">
+            <h3>ChatGPT — โลกได้คุยกับ LLM</h3>
+            <p>คนทั่วไปพบว่า "พิมพ์ขอเป็นประโยค แล้วได้โค้ดทั้งก้อน" ทำได้จริง เริ่มมีการเขียนโปรแกรมแบบบทสนทนา แต่ยังต้องคัดลอกโค้ดไป-มาเอง</p>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2023</div>
+          <div class="htl-body">
+            <h3>โมเดลรุ่นใหญ่ (GPT-4, Claude)</h3>
+            <p>AI เขียนโค้ดได้ทั้งไฟล์ เข้าใจบริบทยาวขึ้นมาก อธิบายและหาบั๊กได้ — คุณภาพเริ่ม "ใช้งานจริงได้" ไม่ใช่แค่ของเล่น</p>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2024</div>
+          <div class="htl-body">
+            <h3>IDE ยุค AI (Cursor, Windsurf)</h3>
+            <p>AI ย้ายเข้ามาอยู่ในโปรแกรมแก้โค้ดโดยตรง สั่งแก้ข้ามหลายไฟล์ได้ในคลิกเดียว ไม่ต้องคัดลอกไป-มาอีกต่อไป</p>
+          </div>
+        </div>
+        <div class="htl-item htl-hot">
+          <div class="htl-year">ก.พ. 2025</div>
+          <div class="htl-body">
+            <img class="htl-photo" src="assets/karpathy.png" alt="Andrej Karpathy" width="66" height="66" loading="lazy" />
+            <h3>Karpathy ตั้งคำว่า "Vibe Coding"</h3>
+            <p>โพสต์เดียวของ Andrej Karpathy ทำให้วิธีทำงานแบบ "ปล่อยตัวไปกับฟีล ให้ AI เขียน เราคอยกำกับ" มีชื่อเรียกอย่างเป็นทางการ และกลายเป็นคำแห่งปี</p>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2025–26</div>
+          <div class="htl-body">
+            <h3>ยุค Agentic Coding</h3>
+            <p>AI แบบ "เอเจนต์" (เช่น Claude Code) วางแผน แก้หลายไฟล์ รันคำสั่ง ทดสอบ และแก้บั๊กเองได้ทั้งงาน — มนุษย์ยิ่งต้องเก่งการ "ตั้งโจทย์ กำกับ และตรวจรับ" ซึ่งก็คือทักษะที่เราฝึกกันวันนี้</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>สังเกตแนวโน้ม:</b> ทุกก้าวคือการยกระดับ "หน่วยของงานที่ AI รับได้" — จากเติมทีละบรรทัด → ทั้งฟังก์ชัน → ทั้งไฟล์ → ทั้งโปรเจกต์
+        สิ่งที่ไม่เคยเปลี่ยนคือ <b>คนยังเป็นผู้กำหนดว่า "จะสร้างอะไร" และ "แบบไหนถึงเรียกว่าดี"</b></div>
+      </div>
+    </section>
+
+    <!-- BRAIN: how the AI predicts -->
+    <section id="brain" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-zap"></use></svg> เบื้องหลัง: AI "เดาคำถัดไป" ได้ยังไง</h2>
+      <p>
+        AI ที่ช่วยเขียนโค้ด (โมเดลภาษาขนาดใหญ่ หรือ <span class="term-inline">LLM</span>)
+        ไม่ได้ "รู้คำตอบ" ล่วงหน้า — มันทำงานด้วยการ<b>ทำนายว่าคำ (token) ถัดไปควรเป็นอะไร ทีละคำ</b>
+        จากความน่าจะเป็นที่เรียนรู้มาจากข้อความมหาศาลทั่วโลก
+        กดปุ่ม "ทำนายคำถัดไป" แล้วดูสมองของ AI ตัดสินใจต่อหน้าคุณ
+      </p>
+
+      <div class="brain" id="brainWidget">
+        <div class="brain-sentence-wrap">
+          <div class="brain-label">ประโยคที่ AI กำลังเขียน</div>
+          <div class="brain-sentence" id="brainSentence"></div>
+        </div>
+        <div class="brain-board">
+          <div class="brain-label" id="brainBoardLabel">ความน่าจะเป็นของ "คำถัดไป"</div>
+          <div class="brain-bars" id="brainBars">
+            <div class="brain-hint">กด "ทำนายคำถัดไป" เพื่อเริ่ม</div>
+          </div>
+        </div>
+        <div class="brain-controls">
+          <button class="btn btn-primary btn-sm" id="brainStep"><svg class="icon"><use href="#i-zap"></use></svg> ทำนายคำถัดไป</button>
+          <button class="btn btn-ghost btn-sm" id="brainAuto"><svg class="icon"><use href="#i-play"></use></svg> เล่นอัตโนมัติ</button>
+          <button class="btn btn-ghost btn-sm" id="brainReset"><svg class="icon"><use href="#i-refresh"></use></svg> เริ่มใหม่</button>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>โค้ดก็คือ "ข้อความ" ชนิดหนึ่ง:</b> AI ใช้วิธีเดียวกันนี้เขียนโค้ด —
+        ทำนายทีละ token ต่อกันไปเรื่อย ๆ จนกลายเป็นโปรแกรมทั้งไฟล์
+        นี่คือเหตุผลที่เราเห็นโค้ด "ไหลออกมาเป็นสาย" ในซิมูเลเตอร์ด้านล่าง</div>
+      </div>
+      <div class="callout callout-warn">
+        <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+        <div><b>จุดอ่อนที่ต้องรู้:</b> คำที่ "น่าจะมาต่อ" ไม่ใช่คำที่ "ถูกต้อง" เสมอไป
+        บางครั้ง AI จึงแต่งสิ่งที่ฟังดูดีแต่ผิดออกมาอย่างมั่นใจ (เรียกว่า <span class="term-inline">hallucination</span>)
+        — นี่คือเหตุผลข้อแรกว่าทำไม<b>เราต้องตรวจงานของ AI เสมอ</b></div>
+      </div>
+    </section>
+
+    <!-- BRAIN 3D -->
+    <section id="brain3d" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-cpu"></use></svg> ส่องสมอง AI แบบ 3 มิติ — สัญญาณวิ่งต่อหน้าคุณ</h2>
+      <p>
+        ด้านบนเราเห็นว่า AI "เลือกคำ" จากความน่าจะเป็น — แต่ตัวเลขพวกนั้นมาจากไหน?
+        คำตอบคือ <span class="term-inline">neural network</span> (โครงข่ายประสาทเทียม):
+        คำสั่งของเราถูกหั่นเป็น token แล้วส่งเป็นสัญญาณวิ่งผ่าน "เซลล์" จำลองทีละชั้น
+        จนปลายทางออกมาเป็นคะแนนของคำถัดไป
+        เลือกคำสั่งด้านล่างแล้วกดส่ง — และ<b>ลากบนภาพเพื่อหมุนดูสมอง AI ได้รอบทิศ</b>
+      </p>
+
+      <div class="b3d" id="b3d">
+        <div class="b3d-row">
+          <div class="b3d-label"><span class="b3d-step-num">1</span> คำสั่งของคุณถูกหั่นเป็น token แล้วป้อนเข้าชั้นแรก (ฝั่งซ้ายของโครงข่าย)</div>
+          <div class="b3d-tokens" id="b3dTokens"><span class="b3d-hintline">เลือกคำสั่งด้านล่าง แล้วกด "ส่งเข้าโครงข่าย"</span></div>
+        </div>
+
+        <div class="b3d-stage" id="b3dStage">
+          <canvas id="b3dCanvas" aria-label="ภาพเคลื่อนไหวโครงข่ายประสาทเทียมแบบ 3 มิติ"></canvas>
+          <div class="b3d-hud"><svg class="icon"><use href="#i-refresh"></use></svg> ลากเพื่อหมุนมุมมอง — นี่คือ "สมอง" ของ AI ฉบับย่อส่วน</div>
+          <div class="b3d-cands" id="b3dCands" hidden>
+            <div class="b3d-cands-title"><span class="b3d-step-num">2</span> ปลายทางโครงข่าย = คะแนนของ token ถัดไป</div>
+            <div id="b3dCandList"></div>
+          </div>
+        </div>
+
+        <div class="b3d-row">
+          <div class="b3d-label"><span class="b3d-step-num">3</span> token ที่ชนะถูกต่อเข้าคำตอบ แล้ววนกลับไปคิด token ถัดไป — ทำแบบนี้ซ้ำจนจบ</div>
+          <div class="b3d-out" id="b3dOut"><span class="b3d-placeholder">คำตอบของ AI จะค่อย ๆ ประกอบขึ้นตรงนี้ทีละ token…</span></div>
+        </div>
+
+        <div class="b3d-controls">
+          <div class="b3d-presets" id="b3dPresets"><!-- ชิปคำสั่ง injected โดย week02.js --></div>
+          <div class="b3d-btns">
+            <button class="btn btn-primary btn-sm" id="b3dRun"><svg class="icon"><use href="#i-zap"></use></svg> ส่งเข้าโครงข่าย</button>
+            <button class="btn btn-ghost btn-sm" id="b3dReset" hidden><svg class="icon"><use href="#i-refresh"></use></svg> เริ่มใหม่</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>ของจริงใหญ่กว่านี้มหาศาล:</b> ในภาพมีเซลล์ไม่กี่สิบตัวเพื่อให้ดูง่าย
+        แต่โมเดลที่ใช้งานจริงมี "น้ำหนัก" ที่เชื่อมเซลล์แบบนี้เป็น<b>แสนล้านถึงล้านล้านค่า</b>
+        ทุกครั้งที่ AI ตอบเรา 1 token สัญญาณต้องวิ่งครบทั้งโครงข่ายแบบที่เห็นนี้ 1 รอบเต็ม ๆ</div>
+      </div>
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-zap"></use></svg>
+        <div><b>เชื่อมกับหัวข้อที่แล้ว:</b> แถบความน่าจะเป็นในหัวข้อ "AI เดาคำถัดไป"
+        ก็คือสิ่งที่ออกมาจากปลายทางขวาสุดของโครงข่ายนี้เอง —
+        ตอนนี้คุณเห็นครบทั้งเส้นทางแล้ว: <b>token เข้า → สัญญาณวิ่งผ่านชั้น → ความน่าจะเป็นออก</b></div>
+      </div>
+    </section>
+
+    <!-- COMPARE -->
+    <section id="compare" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-balance"></use></svg> เขียนโค้ดแบบเดิม vs Vibe Coding</h2>
+      <p>เป้าหมายเดียวกัน คือ "สร้างปุ่มไล่สีที่กดแล้วเด้ง" — ลองเทียบสองวิธีดู</p>
+
+      <div class="compare-grid">
+        <div class="compare-col compare-old">
+          <div class="compare-head"><svg class="icon"><use href="#i-terminal"></use></svg> แบบเดิม (เขียนเอง)</div>
+          <pre class="code-block"><code>.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg, #6e5cff, #00c2ff);
+  color: #fff;
+  transition: transform .2s;
+}
+.btn:active {
+  transform: scale(0.92);
+}</code></pre>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-x"></use></svg> ต้องจำ property CSS ทุกตัว</li>
+            <li><svg class="icon"><use href="#i-x"></use></svg> ผิดนิดเดียวก็เพี้ยน</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> ควบคุมได้ละเอียดทุกจุด</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-new">
+          <div class="compare-head"><svg class="icon"><use href="#i-sparkles"></use></svg> แบบ Vibe Coding</div>
+          <div class="compare-prompt">
+            <div class="cp-who">คุณพิมพ์บอก AI:</div>
+            <div class="cp-msg">"ทำปุ่มสีไล่ม่วง-ฟ้า ขอบมน กดแล้วเด้งเล็กน้อย"</div>
+            <div class="cp-who cp-ai">AI ตอบ:</div>
+            <div class="cp-msg cp-ai-msg">"ได้เลย นี่โค้ดปุ่มที่คุณต้องการ พร้อมเอฟเฟกต์กดเด้ง"</div>
+          </div>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg> เร็ว บอกประโยคเดียว</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> ไม่ต้องจำไวยากรณ์</li>
+            <li><svg class="icon"><use href="#i-alert"></use></svg> ต้องตรวจว่าถูกและปลอดภัย</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>ไม่ใช่การแทนที่ แต่คือการทำงานร่วมกัน:</b> คนเก่ง ๆ ใช้ Vibe Coding เพื่อ "ทำเร็วขึ้น"
+        แต่ยัง<b>ต้องเข้าใจโค้ด</b> เพื่อตรวจงานของ AI ให้ได้ ยิ่งเราเข้าใจพื้นฐานมาก ยิ่งสั่ง AI ได้เก่ง</div>
+      </div>
+    </section>
+
+    <!-- PLAYGROUND (centerpiece widget) -->
+    <section id="playground" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-play"></use></svg> ลองเล่น: ซิมูเลเตอร์ Vibe Coding</h2>
+      <p>
+        เลือก "ไอเดีย" ด้านล่างเหมือนกำลังสั่ง AI แล้ว<b>ดู</b>มันพิมพ์โค้ดออกมาทีละตัว
+        และ<b>เห็น</b>ผลลัพธ์จริงเรนเดอร์ขึ้นทางขวา — นี่คือความรู้สึกของ Vibe Coding
+      </p>
+
+      <div class="vibe-sim" id="vibeSim">
+        <div class="sim-bar">
+          <div class="sim-bar-head">
+            <svg class="icon"><use href="#i-chat"></use></svg>
+            <span>บอก AI ว่าอยากได้อะไร:</span>
+          </div>
+          <div class="sim-chips" id="simChips"><!-- injected by week02.js --></div>
+        </div>
+
+        <div class="sim-stage">
+          <div class="sim-pane sim-code-pane">
+            <div class="sim-pane-head">
+              <span class="sim-dot dr"></span><span class="sim-dot dy"></span><span class="sim-dot dg"></span>
+              <span class="sim-pane-title"><svg class="icon"><use href="#i-code"></use></svg> โค้ดที่ AI เขียน</span>
+              <button type="button" class="sim-edit-btn" id="simEditBtn" hidden>แก้โค้ดเอง</button>
+            </div>
+            <div class="sim-code-wrap">
+              <pre class="sim-code"><code id="simCode"></code></pre>
+              <textarea class="sim-editor" id="simEditor" spellcheck="false" hidden></textarea>
+              <div class="sim-thinking" id="simThinking">
+                <span class="td"></span><span class="td"></span><span class="td"></span>
+                <span class="sim-think-label">AI กำลังคิด…</span>
+              </div>
+              <div class="sim-idle" id="simIdle">← เลือกไอเดียด้านบนเพื่อเริ่ม</div>
+            </div>
+          </div>
+          <div class="sim-pane sim-preview-pane">
+            <div class="sim-pane-head">
+              <span class="sim-pane-title"><svg class="icon"><use href="#i-eye"></use></svg> ผลลัพธ์จริง</span>
+              <span class="sim-live-dot" id="simLive">พร้อม</span>
+            </div>
+            <iframe class="sim-preview" id="simPreview" title="ผลลัพธ์จากโค้ด" sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div>ของจริง AI จะสร้างโค้ดจากคำสั่งที่เรา<b>พิมพ์เอง</b>ได้ทุกแบบ —
+        ตัวอย่างนี้เตรียมไว้ให้เห็นภาพว่า "พิมพ์คำสั่ง → ได้โค้ด → เห็นผล" ทำงานยังไง</div>
+      </div>
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>ความลับ:</b> พอ AI เขียนเสร็จ จะมีปุ่ม <b>"แก้โค้ดเอง"</b> โผล่ขึ้นมุมขวาบนของช่องโค้ด —
+        ลองเปลี่ยนสี ตัวเลข หรือข้อความในโค้ด แล้วกด "รันโค้ดที่แก้" เพื่อดูผลของฝีมือตัวเอง
+        นี่แหละคือขั้น "ปรับแก้" ของ Vibe Coding</div>
+      </div>
+    </section>
+
+    <!-- LOOP -->
+    <section id="loop" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-refresh"></use></svg> วงจรการทำงานของ Vibe Coding</h2>
+      <p>Vibe Coding ไม่ใช่การสั่งครั้งเดียวจบ แต่เป็น "วงวน" ที่ทำซ้ำจนได้ผลดี คลิกแต่ละขั้นเพื่อดูรายละเอียด</p>
+
+      <div class="vloop" id="vloop">
+        <div class="vloop-track">
+          <div class="vnode" data-i="0" tabindex="0" role="button">
+            <span class="vnode-num">1</span>
+            <span class="vnode-ico"><svg class="icon icon-lg"><use href="#i-chat"></use></svg></span>
+            <span class="vnode-name">บอกความต้องการ</span>
+          </div>
+          <div class="vloop-arrow"><svg class="icon"><use href="#i-code"></use></svg></div>
+          <div class="vnode" data-i="1" tabindex="0" role="button">
+            <span class="vnode-num">2</span>
+            <span class="vnode-ico"><svg class="icon icon-lg"><use href="#i-cpu"></use></svg></span>
+            <span class="vnode-name">AI สร้างโค้ด</span>
+          </div>
+          <div class="vloop-arrow"><svg class="icon"><use href="#i-code"></use></svg></div>
+          <div class="vnode" data-i="2" tabindex="0" role="button">
+            <span class="vnode-num">3</span>
+            <span class="vnode-ico"><svg class="icon icon-lg"><use href="#i-play"></use></svg></span>
+            <span class="vnode-name">รันดูผล</span>
+          </div>
+          <div class="vloop-arrow"><svg class="icon"><use href="#i-code"></use></svg></div>
+          <div class="vnode" data-i="3" tabindex="0" role="button">
+            <span class="vnode-num">4</span>
+            <span class="vnode-ico"><svg class="icon icon-lg"><use href="#i-eye"></use></svg></span>
+            <span class="vnode-name">สังเกต / ทดสอบ</span>
+          </div>
+          <div class="vloop-arrow"><svg class="icon"><use href="#i-code"></use></svg></div>
+          <div class="vnode" data-i="4" tabindex="0" role="button">
+            <span class="vnode-num">5</span>
+            <span class="vnode-ico"><svg class="icon icon-lg"><use href="#i-tool2"></use></svg></span>
+            <span class="vnode-name">ปรับแก้ แล้ววนซ้ำ</span>
+          </div>
+        </div>
+        <div class="vloop-detail" id="vloopDetail">
+          คลิกที่ขั้นตอนใด ๆ ด้านบน เพื่อดูคำอธิบายของขั้นนั้น
+        </div>
+      </div>
+    </section>
+
+    <!-- SESSION THEATER -->
+    <section id="session" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-cpu"></use></svg> ดูของจริง: ห้องจำลอง Vibe Session</h2>
+      <p>
+        วงจรที่เพิ่งเรียนไป หน้าตาเป็นแบบนี้ — การคุยกับ AI จริง ๆ ครบ 4 รอบ
+        ตั้งแต่สั่งครั้งแรก ปรับความสวย เพิ่มลูกเล่น ไปจนถึง<b>เจอบั๊กแล้วสั่งแก้</b>
+        กด "เริ่มเซสชัน" แล้วดูทีละรอบ — <b>ผลลัพธ์ด้านขวากดเล่นได้จริง</b> อย่าลืมลองกดปุ่มติดตามในรอบที่ 3!
+      </p>
+
+      <div class="vs2" id="vs2">
+        <div class="vs2-chat">
+          <div class="vs2-pane-head">
+            <svg class="icon"><use href="#i-chat"></use></svg> แชตกับ AI
+            <span class="vs2-turn" id="vs2Turn">ยังไม่เริ่ม</span>
+          </div>
+          <div class="vs2-msgs" id="vs2Msgs">
+            <div class="vs2-empty" id="vs2Empty">กด "เริ่มเซสชัน" ด้านล่าง<br />เพื่อดูบทสนทนาจริงระหว่างคนกับ AI</div>
+          </div>
+        </div>
+        <div class="vs2-right">
+          <div class="vs2-pane-head">
+            <svg class="icon"><use href="#i-code"></use></svg> โค้ดในโปรเจกต์
+            <span class="vs2-ver" id="vs2Ver"></span>
+          </div>
+          <div class="vs2-code" id="vs2Code">
+            <div class="vs2-code-idle">โค้ดจะปรากฏที่นี่ · บรรทัดที่เพิ่งเปลี่ยนจะไฮไลต์สีเขียว</div>
+          </div>
+          <div class="vs2-pane-head vs2-prev-head">
+            <svg class="icon"><use href="#i-eye"></use></svg> ผลลัพธ์สด (กดเล่นได้)
+          </div>
+          <iframe class="vs2-preview" id="vs2Preview" title="ผลลัพธ์ของเซสชัน" sandbox="allow-scripts"></iframe>
+        </div>
+      </div>
+
+      <div class="vs2-controls">
+        <button class="btn btn-primary btn-sm" id="vs2Start"><svg class="icon"><use href="#i-play"></use></svg> เริ่มเซสชัน</button>
+        <button class="btn btn-ghost btn-sm" id="vs2Next" disabled>รอบถัดไป →</button>
+        <button class="btn btn-ghost btn-sm" id="vs2Reset"><svg class="icon"><use href="#i-refresh"></use></svg> เริ่มใหม่</button>
+        <div class="vs2-dots" id="vs2Dots" aria-hidden="true"></div>
+      </div>
+      <div class="vs2-lesson" id="vs2Lesson">บทเรียนของแต่ละรอบจะสรุปให้ตรงนี้</div>
+    </section>
+
+    <!-- PROMPT -->
+    <section id="prompt" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-chat"></use></svg> ศิลปะการสั่ง AI (Prompt ที่ดี)</h2>
+      <p>
+        คุณภาพของผลลัพธ์ขึ้นอยู่กับ "คำสั่ง" เป็นอย่างมาก คำสั่งที่กว้างเกินไปจะได้งานมั่ว ๆ
+        ส่วนคำสั่งที่ชัดเจนจะได้งานตรงใจ — ลองพิมพ์คำสั่งของคุณดู แล้วดูคะแนนความชัดเจนแบบเรียลไทม์
+      </p>
+
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>สูตรของ prompt ที่ดี:</b> <b>[อยากได้อะไร]</b> + <b>[หน้าตาเป็นยังไง]</b> +
+        <b>[ทำงานยังไง]</b> + <b>[ข้อจำกัด/บริบท]</b> — ลองประกอบเองจากชิ้นส่วนด้านล่าง</div>
+      </div>
+
+      <div class="pbuilder" id="pbuilder">
+        <div class="pb-head"><svg class="icon"><use href="#i-tool2"></use></svg> เครื่องประกอบ Prompt — เลือกอย่างละ 1 ชิ้น</div>
+        <div class="pb-groups" id="pbGroups"><!-- injected by week02.js --></div>
+        <div class="pb-out-wrap">
+          <div class="pb-out-label">prompt ที่ประกอบได้:</div>
+          <div class="pb-out" id="pbOut"><span class="pb-placeholder">เลือกชิ้นส่วนด้านบน แล้วประโยคคำสั่งจะประกอบขึ้นตรงนี้…</span></div>
+          <button class="btn btn-primary btn-sm" id="pbSend" disabled><svg class="icon"><use href="#i-zap"></use></svg> ส่งเข้าเครื่องตรวจคะแนนด้านล่าง</button>
+        </div>
+      </div>
+
+      <div class="coach">
+        <div class="coach-input-wrap">
+          <textarea id="coachInput" class="coach-input" rows="3"
+            placeholder="ลองพิมพ์: เช่น 'ทำการ์ดโปรไฟล์ มีรูป ชื่อ ปุ่มติดตามสีฟ้า พื้นหลังไล่สี ตอนเอาเมาส์ชี้ให้ลอยขึ้นเล็กน้อย'"></textarea>
+          <div class="coach-examples">
+            <span>ลองตัวอย่าง:</span>
+            <button type="button" class="coach-ex" data-ex="bad">แบบกว้างเกินไป</button>
+            <button type="button" class="coach-ex" data-ex="good">แบบละเอียดดี</button>
+          </div>
+        </div>
+
+        <div class="coach-result">
+          <div class="coach-meter">
+            <div class="coach-fill" id="coachFill"></div>
+          </div>
+          <div class="coach-score-row">
+            <span class="coach-score-label">คะแนนความชัดเจน</span>
+            <span class="coach-score-val" id="coachScore">0 / 100</span>
+          </div>
+          <ul class="coach-checks" id="coachChecks">
+            <li data-k="len"><svg class="icon"><use href="#i-x"></use></svg> บอกรายละเอียดพอสมควร (ไม่สั้นเกินไป)</li>
+            <li data-k="what"><svg class="icon"><use href="#i-x"></use></svg> ระบุ "สิ่งที่อยากได้" ชัดเจน (ปุ่ม/การ์ด/ฟอร์ม…)</li>
+            <li data-k="look"><svg class="icon"><use href="#i-x"></use></svg> บอกหน้าตา: สี ขนาด หรือรูปทรง</li>
+            <li data-k="behave"><svg class="icon"><use href="#i-x"></use></svg> บอกพฤติกรรม: เมื่อคลิก / ตอนชี้ / ตอนโหลด</li>
+            <li data-k="context"><svg class="icon"><use href="#i-x"></use></svg> ให้บริบทหรือข้อจำกัด (ใช้กับอะไร / ห้ามอะไร)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>เคล็ดลับมือโปร:</b> ไม่ต้องเขียนให้สมบูรณ์ตั้งแต่ครั้งแรก —
+        สั่งสั้น ๆ ให้ได้โครงก่อน แล้ว<b>ค่อย ๆ เติมรายละเอียดทีละรอบ</b>เหมือนในห้องจำลอง Vibe Session
+        และถ้าผลไม่ตรงใจ ให้บอก "อาการที่เห็น" กับ "สิ่งที่ควรเป็น" AI จะแก้ได้ตรงจุดกว่าบอกว่า "ไม่สวย"</div>
+      </div>
+    </section>
+
+    <!-- PATTERNS: 6 advanced prompt techniques -->
+    <section id="patterns" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-layers"></use></svg> เทคนิค Prompt ขั้นสูง 6 ท่า</h2>
+      <p>
+        พ้นจากสูตรพื้นฐานแล้ว มืออาชีพมี "ท่าประจำ" ที่ทำให้ AI ทำงานแม่นขึ้นหลายเท่า —
+        คลิกแต่ละท่าเพื่อดูวิธีใช้และตัวอย่างที่<b>คัดลอกไปใช้ได้ทันที</b>
+      </p>
+
+      <div class="acc" id="patternsAcc">
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 1</span>
+            <span class="acc-title">กำหนดบทบาทให้ AI (Role)</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> อยากได้คำตอบในมุมมองหรือระดับความลึกที่เฉพาะเจาะจง — บทบาทจะกำหนด "น้ำเสียง" และ "ความละเอียด" ของคำตอบ</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>คุณเป็นครูสอนเขียนเว็บสำหรับมือใหม่ ช่วยทำหน้าเว็บโปรไฟล์อย่างง่าย
+พร้อมคอมเมนต์อธิบายทุกส่วนว่าทำหน้าที่อะไร ใช้ศัพท์ง่าย ๆ</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 2</span>
+            <span class="acc-title">ให้ตัวอย่างประกอบ (Few-shot)</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> อธิบายสไตล์ที่ต้องการเป็นคำพูดยาก — โชว์ "ตัวอย่างของที่ชอบ" ให้ดูเลย AI จะเลียนแบบโทนได้แม่นกว่าคำบรรยาย</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>ช่วยเขียนข้อความต้อนรับบนหน้าเว็บ 3 แบบ โทนเดียวกับตัวอย่างนี้:
+"ยินดีต้อนรับสู่ครัวของเรา ที่ทุกจานคือเรื่องราว"
+(อบอุ่น สั้น มีจังหวะ ไม่ขายของโครม ๆ)</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 3</span>
+            <span class="acc-title">แบ่งงานใหญ่เป็นขั้นเล็ก</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> งานใหญ่เกินหนึ่งคำสั่ง เช่น "ทำเว็บร้านค้า" — ถ้าสั่งทีเดียว AI จะเดาเองเยอะและหลุดง่าย ให้มันวางแผนก่อนแล้วทำทีละส่วน</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>อยากได้เว็บแนะนำร้านกาแฟ 1 หน้า — อย่าเพิ่งเขียนโค้ด
+ช่วยเสนอก่อนว่าควรแบ่งเป็นกี่ส่วน แต่ละส่วนมีอะไร
+เดี๋ยวผมเลือกแล้วค่อยทำทีละส่วน</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 4</span>
+            <span class="acc-title">ให้บริบทของงานเดิม</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> มีโค้ดเดิมอยู่แล้ว — AI มองไม่เห็นหน้าจอเรา ต้องบอกว่ามีอะไรอยู่ ใช้เทคโนโลยีไหน และ "ห้ามแตะ" ส่วนไหน</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>เว็บผมมีไฟล์เดียวคือ index.html ใช้ CSS ล้วน ไม่มีไลบรารี
+[วางโค้ดเดิมตรงนี้]
+ช่วยเพิ่มแถบเมนูด้านบน โดยห้ามแก้ส่วน .profile-card เดิม</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 5</span>
+            <span class="acc-title">ให้ AI อธิบายก่อนลงมือแก้</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> เจอบั๊กหรือโค้ดที่ไม่เข้าใจ — บังคับให้ AI "คิดดัง ๆ" ก่อนแก้ จะลดการเดามั่ว และเราได้เรียนรู้ไปด้วย</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>โค้ดนี้กดปุ่มแล้วตัวเลขไม่เพิ่ม [วางโค้ด]
+ก่อนแก้ ช่วยอธิบายก่อนว่าโค้ดทำงานยังไงทีละขั้น
+แล้วบอกว่าคิดว่าปัญหาอยู่ตรงไหน เพราะอะไร ค่อยเสนอวิธีแก้</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">ท่า 6</span>
+            <span class="acc-title">ขอหลายทางเลือก แล้วเราเลือกเอง</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>ใช้เมื่อ:</b> ยังไม่แน่ใจว่าอยากได้แบบไหน — อย่าให้ AI ตัดสินใจแทน ให้มันเสนอ แล้วอำนาจตัดสินใจอยู่ที่เรา (นี่คือหัวใจของการเป็น "คนกำกับ")</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">ตัวอย่าง</div>
+              <pre class="code-block"><code>ช่วยออกแบบส่วนหัวเว็บโปรไฟล์มา 3 แนว
+(เช่น มินิมอล / สายเกม / ทางการ) อธิบายข้อดีข้อเสียสั้น ๆ
+ของแต่ละแนว ยังไม่ต้องเขียนโค้ด เดี๋ยวผมเลือกก่อน</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>ท่าไม้ตายรวมร่าง:</b> ของจริงมักใช้หลายท่าพร้อมกัน เช่น กำหนดบทบาท + ให้บริบท + ขอให้วางแผนก่อน
+        — ยิ่งงานใหญ่ ยิ่งต้องคุยเป็นขั้นเป็นตอน ไม่ใช่สั่งประโยคเดียวจบ</div>
+      </div>
+    </section>
+
+    <!-- ACTIVITY: Human AI game -->
+    <section id="activity" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-users"></use></svg> โจทย์ฝึก: เกม "มนุษย์ AI"</h2>
+      <p>
+        โจทย์นี้ใช้แค่กระดาษกับปากกา แต่จะทำให้เข้าใจ "ความยากของการสั่งงาน"
+        ลึกกว่าอ่านทฤษฎีหลายรอบ — เพราะคุณจะได้เห็นกับตาว่าคำสั่งของตัวเอง "กำกวม" แค่ไหน
+        เมื่อคนที่ทำตามไม่ยอมเดาใจให้
+      </p>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-cpu"></use></svg>
+        <div><b>กติกาของคนที่รับบท "AI":</b> ทำตามคำสั่ง<b>แบบตรงตัวอักษรเท่านั้น</b>
+        ห้ามถามกลับ ห้ามเดาใจ ห้ามใช้สามัญสำนึก — คำสั่งกำกวมตรงไหน ตีความเข้าข้างตัวเองได้เต็มที่</div>
+      </div>
+
+      <ol class="steps">
+        <li><b>โจทย์รอบที่ 1 — "บ้านในฝัน":</b> คนสั่งนึกภาพบ้านไว้ในใจ แล้วสั่งให้ "AI" วาดลงกระดาษทีละประโยค
+        ห้ามชี้ ห้ามจับมือวาด — จบแล้วเทียบภาพที่วาดได้กับภาพในหัว เหมือนกันแค่ไหน?</li>
+        <li><b>โจทย์รอบที่ 2 — "สัตว์ประหลาดน่ารัก":</b> คราวนี้เขียนคำสั่งด้วยสูตร prompt 4 ส่วนที่เรียนมา
+        (อยากได้อะไร / หน้าตา / พฤติกรรม / ข้อจำกัด) แล้วดูว่าผลลัพธ์ต่างจากรอบแรกแค่ไหน</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>คำถามชวนคิดหลังเล่นจบ:</b> (1) คำสั่งแบบไหนที่ได้ผลตรงใจที่สุด?
+        (2) ตรงไหนที่ "AI" ต้องตีความเอง แล้วผลออกมาเพี้ยน?
+        (3) รอบสองดีขึ้นเพราะอะไร — แล้วมันเชื่อมกับการสั่ง AI จริงยังไง?</div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-tool"></use></svg> เครื่องมือ AI ยอดนิยม</h2>
+      <p>มีเครื่องมือหลายตัวให้เลือกใช้ คลิกที่การ์ดเพื่อพลิกดูรายละเอียด — หลายตัวมีแพ็กเกจฟรีหรือส่วนลดสำหรับนักศึกษา</p>
+
+      <div class="tool-grid">
+        <div class="tool-card" tabindex="0" role="button" aria-label="Claude Code รายละเอียด">
+          <div class="tool-face tool-front">
+            <span class="tool-ico"><svg class="icon icon-lg"><use href="#i-terminal"></use></svg></span>
+            <h3>Claude Code</h3>
+            <span class="tool-tag">Terminal / Agent</span>
+          </div>
+          <div class="tool-face tool-back">
+            <p>ผู้ช่วยเขียนโค้ดของ Anthropic ทำงานในเทอร์มินัล/IDE สั่งเป็นภาษาคนแล้วแก้ไฟล์ รันคำสั่ง และทำงานหลายขั้นให้เองได้</p>
+          </div>
+        </div>
+        <div class="tool-card" tabindex="0" role="button" aria-label="Cursor รายละเอียด">
+          <div class="tool-face tool-front">
+            <span class="tool-ico"><svg class="icon icon-lg"><use href="#i-code"></use></svg></span>
+            <h3>Cursor</h3>
+            <span class="tool-tag">โปรแกรมแก้โค้ด (IDE)</span>
+          </div>
+          <div class="tool-face tool-back">
+            <p>IDE ที่ต่อยอดจาก VS Code ฝัง AI ไว้ในตัว แชตสั่งแก้โค้ดทั้งโปรเจกต์ และมี autocomplete อัจฉริยะ</p>
+          </div>
+        </div>
+        <div class="tool-card" tabindex="0" role="button" aria-label="GitHub Copilot รายละเอียด">
+          <div class="tool-face tool-front">
+            <span class="tool-ico"><svg class="icon icon-lg"><use href="#i-github"></use></svg></span>
+            <h3>GitHub Copilot</h3>
+            <span class="tool-tag">ส่วนเสริมใน IDE</span>
+          </div>
+          <div class="tool-face tool-back">
+            <p>ผู้ช่วยของ GitHub เติมโค้ดให้ขณะพิมพ์และมีแชตช่วยตอบ ใช้ได้ใน VS Code และมีสิทธิ์ฟรีสำหรับนักศึกษา</p>
+          </div>
+        </div>
+        <div class="tool-card" tabindex="0" role="button" aria-label="v0 รายละเอียด">
+          <div class="tool-face tool-front">
+            <span class="tool-ico"><svg class="icon icon-lg"><use href="#i-eye"></use></svg></span>
+            <h3>v0 / Bolt</h3>
+            <span class="tool-tag">สร้างเว็บจากคำพูด</span>
+          </div>
+          <div class="tool-face tool-back">
+            <p>เครื่องมือบนเว็บ พิมพ์บอกว่าอยากได้หน้าเว็บแบบไหน แล้วมันสร้าง UI พร้อมพรีวิวให้ทันที เหมาะกับงานหน้าเว็บ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOD / BAD -->
+    <section id="goodbad" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-alert"></use></svg> ข้อดี และ ข้อควรระวัง</h2>
+      <div class="gb-grid">
+        <div class="gb-col gb-good">
+          <div class="gb-head"><svg class="icon icon-lg"><use href="#i-check"></use></svg> ข้อดี</div>
+          <ul>
+            <li>เริ่มงานได้เร็วมาก จากไอเดียเป็นต้นแบบใน "นาที"</li>
+            <li>ลดภาระการจำไวยากรณ์ ได้โฟกัสที่ "จะแก้ปัญหาอะไร"</li>
+            <li>เป็นครูส่วนตัว ถาม-อธิบายโค้ดให้เข้าใจได้ทันที</li>
+            <li>ช่วยงานซ้ำ ๆ, หา bug และ refactor ได้ไว</li>
+          </ul>
+        </div>
+        <div class="gb-col gb-bad">
+          <div class="gb-head"><svg class="icon icon-lg"><use href="#i-alert"></use></svg> ข้อควรระวัง</div>
+          <ul>
+            <li>AI อาจ <span class="term-inline">hallucination</span> — มั่นใจแต่ผิด ต้องตรวจเสมอ</li>
+            <li>อย่ารันโค้ดที่ไม่เข้าใจ โดยเฉพาะคำสั่งลบไฟล์หรือรหัสผ่าน</li>
+            <li>ระวังข้อมูลลับ อย่าวางรหัสผ่าน/คีย์จริงลงไปในคำสั่ง</li>
+            <li>ถ้าไม่เข้าใจพื้นฐานเลย จะตรวจงานและแก้ปัญหาไม่ได้</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout-warn">
+        <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+        <div><b>กฎเหล็ก:</b> "อย่าเชื่อ AI ทั้งหมด และอย่ารันสิ่งที่ไม่เข้าใจ" —
+        AI คือผู้ช่วยที่เก่งแต่ก็ผิดพลาดได้ คนที่รับผิดชอบผลงานสุดท้ายคือ <b>ตัวเรา</b></div>
+      </div>
+    </section>
+
+    <!-- BUG GAME -->
+    <section id="buggame" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-bug"></use></svg> เกม: จับผิดโค้ดของ AI</h2>
+      <p>
+        ทักษะที่สำคัญที่สุดของนัก Vibe Coding คือ "ตาที่จับผิดเป็น" —
+        ต่อไปนี้คือโค้ด 3 ชิ้นที่ AI เขียนให้ แต่ละชิ้น<b>มีจุดผิดหรือจุดอันตรายซ่อนอยู่ 1 จุด</b>
+        อ่านโจทย์ แล้ว<b>คลิกบรรทัดที่คิดว่ามีปัญหา</b> — ตอบถูกตั้งแต่ครั้งแรกได้ 2 คะแนน
+      </p>
+      <div class="buggame" id="bugGame"><!-- injected by week02.js --></div>
+    </section>
+
+    <!-- WORKFLOW: tie to GitHub -->
+    <section id="workflow" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-branch"></use></svg> ต่อยอด: จาก Vibe Coding สู่ GitHub</h2>
+      <p>
+        สิ่งที่เรียนสัปดาห์ที่แล้วเชื่อมกับสัปดาห์นี้พอดี — ให้ AI ช่วยสร้างงาน
+        แล้วใช้ <a href="week01.html">GitHub (สัปดาห์ 1)</a> เก็บและเผยแพร่ผลงาน
+      </p>
+      <ol class="steps">
+        <li><b>สั่ง AI</b> ให้ช่วยสร้างเว็บ/โปรแกรมตามที่อยากได้ แล้วรันดูจนใช้ได้</li>
+        <li><b>ตรวจและทำความเข้าใจ</b> โค้ด ปรับให้ถูกต้องและปลอดภัย</li>
+        <li><b>commit &amp; push</b> ขึ้น GitHub เก็บประวัติทุกเวอร์ชัน</li>
+        <li><b>เปิด GitHub Pages</b> ให้กลายเป็นเว็บจริงที่แชร์ลิงก์ให้คนอื่นดูได้</li>
+      </ol>
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div>ทักษะ Git/GitHub ยิ่งสำคัญในยุค AI เพราะเมื่อเราสร้างงานได้เร็วขึ้น
+        เรายิ่งต้องมีระบบเก็บเวอร์ชันที่ดี เผื่อ AI แก้แล้วพัง จะได้ย้อนกลับได้</div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP -->
+    <section id="workshop" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-clipboard"></use></svg> โจทย์ใหญ่: เว็บโปรไฟล์ของฉัน ขึ้น GitHub Pages</h2>
+      <p>
+        ถึงเวลาใช้ทุกอย่างที่เรียนมา — โจทย์คือสร้าง<b>เว็บโปรไฟล์ด้วย Vibe Coding
+        ให้ออนไลน์จริงบน GitHub Pages</b> ติ๊กเช็กพอยต์ไปทีละข้อ (บันทึกให้อัตโนมัติในเครื่อง)
+      </p>
+
+      <div class="ws" id="wsWidget">
+        <div class="ws-progress-row">
+          <div class="ws-progress"><div class="ws-fill" id="wsFill"></div></div>
+          <span class="ws-count" id="wsCount">0 / 7</span>
+        </div>
+        <div class="ws-list" id="wsList">
+          <label class="ws-item"><input type="checkbox" data-k="0" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>1 · เขียน prompt แรก</b><br />
+            ใช้สูตร 4 ส่วน (อยากได้อะไร / หน้าตา / พฤติกรรม / ข้อจำกัด) — ใช้<a href="#prompt">เครื่องประกอบ Prompt</a> ด้านบนช่วยร่างได้</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="1" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>2 · ให้ AI สร้าง แล้วรันดูผล</b><br />
+            บันทึกโค้ดเป็น index.html แล้วเปิดในเบราว์เซอร์ ดูว่าได้อะไรมา</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="2" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>3 · วนปรับอย่างน้อย 3 รอบ</b><br />
+            แต่ละรอบ<b>จดไว้ว่าสั่งว่าอะไร</b> — จะได้เห็นพัฒนาการ prompt ของตัวเอง ลองใช้เทคนิคจาก 6 ท่าด้วย</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="3" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>4 · ถามจนเข้าใจโค้ด</b><br />
+            เลือกส่วนที่ไม่เข้าใจ 1 ส่วน ถาม AI จนอธิบายให้เพื่อนข้าง ๆ ฟังได้</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="4" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>5 · แก้เองด้วยมือ 1 จุด</b><br />
+            เปลี่ยนสี ข้อความ หรือขนาดอะไรก็ได้ <b>โดยไม่พึ่ง AI</b> — พิสูจน์ว่าคุมโค้ดของตัวเองได้</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="5" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>6 · สร้าง repo แล้ว commit + push</b><br />
+            ทวนจาก<a href="week01.html">สัปดาห์ 1</a>: git init → add → commit → push (จุดที่แก้เองให้ commit แยก)</span></label>
+          <label class="ws-item"><input type="checkbox" data-k="6" />
+            <span class="ws-check"></span>
+            <span class="ws-text"><b>7 · เปิด GitHub Pages</b><br />
+            Settings → Pages → เลือก branch main แล้วรอลิงก์ — เว็บของคุณออนไลน์แล้ว!</span></label>
+        </div>
+        <div class="ws-done" id="wsDone" hidden>
+          <svg class="icon icon-lg"><use href="#i-award"></use></svg>
+          ครบทุกเช็กพอยต์! เว็บโปรไฟล์ของคุณออนไลน์บนอินเทอร์เน็ตจริง ๆ แล้ว
+        </div>
+      </div>
+    </section>
+
+    <!-- ETHICS -->
+    <section id="ethics" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-shield"></use></svg> ใช้ AI อย่างมีจรรยาบรรณ — และคำถามถึงอนาคต</h2>
+      <p>
+        เครื่องมือแรงขึ้น ความรับผิดชอบก็มากขึ้นตาม — มาตกลงกันเรื่อง "เส้น" ที่นักศึกษาวิศวกรรมคอมพิวเตอร์ควรยึด
+      </p>
+      <div class="gb-grid">
+        <div class="gb-col gb-good">
+          <div class="gb-head"><svg class="icon icon-lg"><use href="#i-check"></use></svg> ควรทำ</div>
+          <ul>
+            <li>เข้าใจทุกบรรทัดก่อนส่งงาน — ถ้าอธิบายไม่ได้ อย่าเพิ่งส่ง</li>
+            <li>เปิดเผยตามนโยบายรายวิชา ว่าใช้ AI ช่วยส่วนไหน</li>
+            <li>ใช้ AI เป็น "ครูส่วนตัว" — ถามว่าทำไม ไม่ใช่แค่ขอคำตอบ</li>
+            <li>ตรวจความถูกต้องและที่มาของโค้ด ก่อนนำไปใช้ต่อ</li>
+          </ul>
+        </div>
+        <div class="gb-col gb-bad">
+          <div class="gb-head"><svg class="icon icon-lg"><use href="#i-alert"></use></svg> ไม่ควรทำ</div>
+          <ul>
+            <li>ส่งงานที่ตัวเองอธิบายไม่ได้ — นั่นไม่ใช่ผลงานของเรา</li>
+            <li>ใช้ AI ในข้อสอบหรืองานที่ผู้สอนห้ามไว้ชัดเจน</li>
+            <li>วางข้อมูลส่วนตัว รหัสผ่าน หรือข้อมูลลับของผู้อื่นลงในแชต</li>
+            <li>เชื่อคำตอบทั้งหมดโดยไม่ตรวจ — ความรับผิดชอบโอนให้ AI ไม่ได้</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="discuss">
+        <div class="discuss-head"><svg class="icon"><use href="#i-users"></use></svg> คำถามชวนคิด: "แล้ว AI จะแทนโปรแกรมเมอร์ไหม?"</div>
+        <ol class="steps">
+          <li>งานส่วนไหนของโปรแกรมเมอร์ที่ AI ทำแทน<b>ยากที่สุด</b>? เพราะอะไร?</li>
+          <li>ถ้าการ "พิมพ์โค้ด" ถูกลง ทักษะไหนของเราที่<b>แพงขึ้น</b>?</li>
+          <li>ถ้าใคร ๆ ก็สั่ง AI ได้ อะไรทำให้ "วิศวกรคอมพิวเตอร์" ยังต่างจากคนทั่วไป?</li>
+        </ol>
+        <div class="callout callout-info">
+          <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+          <div><b>มุมมองของวันนี้:</b> บทบาทกำลังเปลี่ยนจาก "คนพิมพ์โค้ด" ไปเป็น
+          <b>"คนออกแบบระบบ กำกับ AI และรับผิดชอบผลลัพธ์"</b> — เครื่องพิมพ์ดีดไม่ได้ฆ่านักเขียน
+          มันแค่เปลี่ยนว่านักเขียนใช้เวลากับอะไร</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-award"></use></svg> แบบทดสอบท้ายบท</h2>
+      <p>ตอบ 6 ข้อสั้น ๆ เพื่อเช็กว่าเก็บครบทุกประเด็นของสัปดาห์นี้แล้ว — ตอบแล้วเฉลยทันทีทุกข้อ</p>
+      <div id="quiz2Container"></div>
+      <div class="quiz-score" id="quiz2Score"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-help"></use></svg> คำถามพบบ่อย</h2>
+      <p>รวมคำถามที่นักศึกษาถามบ่อยที่สุดเรื่อง Vibe Coding — คลิกที่คำถามเพื่อดูคำตอบ</p>
+      <div class="acc" id="faqAcc">
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">ตอนนี้ใช้เครื่องมืออะไรได้ฟรีบ้าง?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            นักศึกษาได้ <b>GitHub Copilot ฟรี</b>ผ่าน GitHub Student Developer Pack (ดูวิธีขอสิทธิ์ใน<a href="week01.html">สัปดาห์ 1</a>)
+            ส่วน Claude, ChatGPT และ Gemini มีเว็บเวอร์ชันฟรีแบบจำกัดโควตาต่อวัน ซึ่งเพียงพอสำหรับงานเรียน
+            Cursor มีแผนฟรีให้ลองใช้เช่นกัน
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">สั่งเป็นภาษาไทยได้ไหม หรือต้องใช้อังกฤษ?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            ภาษาไทยใช้ได้ดีกับโมเดลรุ่นใหญ่ทุกตัว สั่งงานทั่วไปได้สบาย —
+            แต่<b>ศัพท์เทคนิคควรคงเป็นภาษาอังกฤษ</b> (เช่น hover, responsive, gradient)
+            เพราะตรงกับคำที่โมเดลเจอในโค้ดจริง จะแม่นกว่าการแปลเป็นไทยทั้งหมด
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">AI เขียนโค้ดผิดบ่อยแค่ไหน?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            งานเล็กและเป็นแบบแผน (เว็บหน้าเดียว ฟอร์ม ปุ่ม) แม่นมาก แทบไม่พลาด
+            แต่ยิ่งงานซับซ้อน มีหลายส่วนต่อกัน หรือใช้ไลบรารีใหม่ ๆ ที่ข้อมูลน้อย โอกาสผิดยิ่งสูงขึ้น
+            และที่สำคัญ: <b>ผิดแบบเนียน</b> เหมือนบั๊ก 1201 ในห้องจำลอง — จึงต้องทดสอบเองทุกครั้ง ไม่มีข้อยกเว้น
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">แล้วยังต้องตั้งใจเรียนเขียนโปรแกรมพื้นฐานอยู่ไหม?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            ยิ่งต้องตั้งใจกว่าเดิม — คนที่ไม่รู้พื้นฐานจะ<b>ตรวจงาน AI ไม่ได้ แก้ทางตันไม่ได้ และสั่งได้แต่งานผิว ๆ</b>
+            ในขณะที่คนเข้าใจพื้นฐานจะใช้ AI ได้ทรงพลังกว่าหลายเท่า เพราะรู้ว่าควรขออะไร และรู้ทันทีว่าอะไรผิด
+            คิดง่าย ๆ: AI คือรถเร็ว พื้นฐานคือใบขับขี่
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">ใช้ Vibe Coding กับวิชาอื่นหรือในข้อสอบได้ไหม?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            <b>ขึ้นกับนโยบายของผู้สอนแต่ละวิชา — ต้องถามก่อนเสมอ</b> บางวิชาให้ใช้เต็มที่ บางวิชาห้ามเด็ดขาดเพราะต้องการวัดพื้นฐาน
+            หลักคิดคือความโปร่งใส: ใช้ตรงไหน บอกตรงนั้น การแอบใช้ในงานที่ห้าม = ทุจริตทางวิชาการ
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">โค้ดที่ AI สร้างให้ เป็นลิขสิทธิ์ของใคร?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            โดยทั่วไปผู้ให้บริการรายใหญ่ (Anthropic, OpenAI, GitHub) ให้สิทธิ์ผู้ใช้นำผลลัพธ์ไปใช้ได้ รวมถึงเชิงพาณิชย์
+            แต่ควรอ่านเงื่อนไขบริการของเครื่องมือที่ใช้ และระวังกรณีโค้ดที่ออกมา "เหมือนของคนอื่นมาก ๆ"
+            — งานส่งเรียนไม่มีปัญหา แต่ถ้าทำผลิตภัณฑ์จริงควรศึกษาเพิ่ม
+          </p></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-title">อยากเก่งกว่านี้ ควรฝึกอะไรต่อ?</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body"><p>
+            (1) ทำโปรเจกต์เล็ก ๆ ให้จบบ่อย ๆ สำคัญกว่าโปรเจกต์ใหญ่ที่ไม่เสร็จ
+            (2) ทุกครั้งที่ AI เขียนอะไรที่ไม่เข้าใจ ให้ถามจนเข้าใจ — นี่คือชั่วโมงเรียนฟรี
+            (3) ฝึกอ่านโค้ดคนอื่นใน GitHub
+            (4) เรียนพื้นฐาน HTML/CSS/JS และ Python ควบคู่ไปด้วย แล้วสังเกตว่าตัวเองสั่ง AI ได้เฉียบขึ้นเรื่อย ๆ
+          </p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-book"></use></svg> แหล่งเรียนรู้เพิ่มเติม</h2>
+      <ul class="link-list">
+        <li><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">เอกสาร Claude Code — คู่มือผู้ช่วยเขียนโค้ด</a></li>
+        <li><a href="https://docs.github.com/copilot" target="_blank" rel="noopener">GitHub Copilot — เอกสารและสิทธิ์นักศึกษา</a></li>
+        <li><a href="https://cursor.com" target="_blank" rel="noopener">Cursor — IDE ที่ฝัง AI</a></li>
+        <li><a href="week01.html">ทบทวนสัปดาห์ 1 — การใช้งาน GitHub</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== Back to top ===== -->
+  <button class="back-top" id="backTop" aria-label="กลับขึ้นบนสุด">
+    <svg class="icon"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <script src="script.js?v=5"></script>
+  <script src="week02.js?v=5"></script>
+</body>
+</html>

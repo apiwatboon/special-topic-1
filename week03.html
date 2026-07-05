@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Coding ทั้งโปรเจกต์ — เว็บง่ายถึงซับซ้อน | Special Topic 1 - วิศวกรรมคอมพิวเตอร์</title>
+  <meta name="description" content="สื่อการสอนเรื่องการใช้ Vibe Coding สร้างเว็บไซต์ทั้งโปรเจกต์ ตั้งแต่เว็บหน้าเดียวแบบง่าย ไปจนถึงเว็บแอปซับซ้อนที่ต้องวางแผนเป็น Milestone" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
+
+  <!-- ===== SVG sprite ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.26.82-.57 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.09 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.46-2.34 1.24-3.16-.12-.3-.54-1.5.12-3.12 0 0 1-.32 3.3 1.21.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.29-1.53 3.29-1.21 3.29-1.21.66 1.62.24 2.82.12 3.12.77.82 1.23 1.87 1.23 3.16 0 4.53-2.81 5.53-5.49 5.82.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .31.22.69.83.57A12.02 12.02 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9.2l-4.4 1.6L12 15l-1.6-4.2L6 9.2l4.4-1.6z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/><path d="M5 4l.6 1.6L7 6.2l-1.4.6L5 8l-.6-1.2L3 6.2l1.4-.6z"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="i-balance" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M12 6l-7 3 7 3 7-3z" fill="none"/><path d="M5 9l-2.5 5a2.5 2.5 0 0 0 5 0z"/><path d="M19 9l-2.5 5a2.5 2.5 0 0 0 5 0z"/><line x1="7" y1="20" x2="17" y2="20"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="i-tool2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Top progress bar ===== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ===== Mobile menu button ===== -->
+  <button class="menu-toggle" id="menuToggle" aria-label="เปิด/ปิดเมนู">
+    <svg class="icon"><use href="#i-menu"></use></svg>
+  </button>
+
+  <!-- ===== Sidebar navigation ===== -->
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="index.html" title="กลับหน้ารวมรายวิชา">
+      <span class="brand-icon brand-vibe"><svg class="icon"><use href="#i-rocket"></use></svg></span>
+      <div>
+        <strong>Vibe ทั้งโปรเจกต์</strong>
+        <small>Special Topic 1 · สัปดาห์ 3</small>
+      </div>
+    </a>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link nav-home"><svg class="icon"><use href="#i-home"></use></svg> หน้ารวมรายวิชา</a>
+      <a href="#home" class="nav-link active"><svg class="icon"><use href="#i-rocket"></use></svg> เกริ่นนำ</a>
+      <div class="nav-sec">หลักคิด + เคสง่าย</div>
+      <a href="#scale" class="nav-link"><svg class="icon"><use href="#i-balance"></use></svg> เว็บง่าย vs เว็บซับซ้อน</a>
+      <a href="#phases" class="nav-link"><svg class="icon"><use href="#i-layers"></use></svg> กฎทอง: แบ่งเป็นเฟส</a>
+      <a href="#simple" class="nav-link"><svg class="icon"><use href="#i-play"></use></svg> เคสที่ 1: เว็บง่าย</a>
+      <div class="nav-sec">เคสซับซ้อน</div>
+      <a href="#complex" class="nav-link"><svg class="icon"><use href="#i-map"></use></svg> เคสที่ 2: เว็บซับซ้อน</a>
+      <a href="#control" class="nav-link"><svg class="icon"><use href="#i-cpu"></use></svg> เทคนิคคุมโปรเจกต์</a>
+      <div class="nav-sec">โจทย์ + แบบทดสอบ</div>
+      <a href="#workshop" class="nav-link"><svg class="icon"><use href="#i-clipboard"></use></svg> โจทย์ใหญ่: เว็บทั้งโปรเจกต์</a>
+      <a href="#quiz" class="nav-link"><svg class="icon"><use href="#i-award"></use></svg> แบบทดสอบท้ายบท</a>
+      <a href="#resources" class="nav-link"><svg class="icon"><use href="#i-book"></use></svg> แหล่งเรียนรู้</a>
+    </nav>
+    <div class="sidebar-footer">
+      <small>สาขาวิชาวิศวกรรมคอมพิวเตอร์</small>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== Main content ===== -->
+  <main class="content">
+
+    <!-- HOME -->
+    <section id="home" class="hero hero-vibe">
+      <span class="hero-logo hero-logo-vibe"><svg class="icon"><use href="#i-rocket"></use></svg></span>
+      <div class="hero-badge">Special Topic 1 · สัปดาห์ที่ 3</div>
+      <h1><span class="grad">Vibe Coding ทั้งโปรเจกต์</span><br />จากเว็บง่าย สู่เว็บซับซ้อน</h1>
+      <p class="hero-sub">
+        สองสัปดาห์ที่แล้วเราสั่ง AI ทีละชิ้นเล็ก ๆ — สัปดาห์นี้ยกระดับ:
+        สร้าง<b>เว็บไซต์ทั้งโครงการ</b>ด้วย Vibe Coding ผ่าน 2 เคสจริง
+        ตั้งแต่เว็บหน้าเดียวจบใน 4 คำสั่ง ไปจนถึงเว็บแอปที่ต้องวางแผนเป็น Milestone
+      </p>
+      <div class="hero-actions">
+        <a href="#scale" class="btn btn-primary">เริ่มเรียน →</a>
+        <a href="#simple" class="btn btn-ghost">ข้ามไปดูเคสตัวอย่าง</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>2</strong><span>เคสตัวอย่าง ง่าย/ซับซ้อน</span></div>
+        <div class="stat"><strong>4</strong><span>Milestone สำหรับงานใหญ่</span></div>
+        <div class="stat"><strong>5</strong><span>ขั้น สูตรคุมโปรเจกต์</span></div>
+        <div class="stat"><strong>1</strong><span>เว็บจริงของคุณบน Pages</span></div>
+      </div>
+    </section>
+
+
+    <!-- SCALE: simple vs complex + decision helper -->
+    <section id="scale" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-balance"></use></svg> เว็บ "ง่าย" กับ "ซับซ้อน" ต่างกันตรงไหน</h2>
+      <p>
+        คำว่า "ทำเว็บ" กินความกว้างมาก — ป้ายร้านออนไลน์หน้าเดียว กับระบบสั่งซื้อทั้งร้าน
+        ใช้วิธีสั่ง AI คนละแบบกันเลย ตัวแบ่งที่แท้จริงไม่ใช่ "ความสวย" แต่คือ 3 อย่างนี้
+      </p>
+
+      <div class="mini-cards">
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-layers"></use></svg></span>
+          <h3>จำนวนชิ้นส่วน</h3>
+          <p>หน้าเดียว vs หลายหน้า หลายไฟล์ — ยิ่งชิ้นส่วนเยอะ ยิ่งต้องคุมให้ "เข้ากันได้" ทั้งหมด</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-cpu"></use></svg></span>
+          <h3>ข้อมูลและสถานะ</h3>
+          <p>เว็บที่ "จำอะไรได้" (ตะกร้า รายการโปรด บัญชีผู้ใช้) ยากกว่าเว็บที่แค่แสดงผลหลายเท่า</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-ico"><svg class="icon icon-lg"><use href="#i-branch"></use></svg></span>
+          <h3>เส้นทางการใช้งาน</h3>
+          <p>ผู้ใช้เดินทางข้ามหน้า (เลือกของ → ตะกร้า → จ่ายเงิน) จุดต่อระหว่างหน้าคือแหล่งบั๊กชั้นดี</p>
+        </div>
+      </div>
+
+      <table class="cmp-table">
+        <thead><tr><th>&nbsp;</th><th>เว็บแบบง่าย</th><th>เว็บแบบซับซ้อน</th></tr></thead>
+        <tbody>
+          <tr><td>ตัวอย่าง</td><td>เว็บโปรไฟล์, ป้ายร้าน, หน้าแนะนำสินค้า, การ์ดเชิญงาน</td><td>ระบบสั่งซื้อ, เว็บจองคิว, กระดานงานกลุ่ม, เว็บมีสมาชิก</td></tr>
+          <tr><td>โครงสร้าง</td><td>1 หน้า 1 ไฟล์ จบได้</td><td>หลายหน้า หลายไฟล์ ต้องออกแบบก่อน</td></tr>
+          <tr><td>ข้อมูล</td><td>เขียนตายตัวในหน้าเว็บ</td><td>เปลี่ยนตามผู้ใช้ ต้องเก็บ/จำ (state)</td></tr>
+          <tr><td>วิธีสั่ง AI</td><td>สั่งต่อเนื่องทีละส่วน 3–6 คำสั่งจบ</td><td>วางแผนก่อน แล้วเดินเป็น Milestone</td></tr>
+          <tr><td>จุดตาย</td><td>แทบไม่มี — พังก็สั่งใหม่</td><td>บั๊กข้ามหน้า, AI ลืมบริบท, แก้จุดหนึ่งพังอีกจุด</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-h">เครื่องวัด: ไอเดียเว็บของคุณอยู่ระดับไหน?</h3>
+      <p>นึกถึงเว็บที่อยากทำ แล้วติ๊กทุกข้อที่ตรง — เกจจะบอกว่าควรใช้แนวทางเคสที่ 1 หรือเคสที่ 2</p>
+      <div class="dh" id="dhWidget">
+        <div class="dh-list" id="dhList"><!-- injected by week03.js --></div>
+        <div class="dh-result">
+          <div class="coach-meter"><div class="coach-fill" id="dhFill"></div></div>
+          <div class="coach-score-row">
+            <span class="coach-score-label">ระดับความซับซ้อน</span>
+            <span class="coach-score-val" id="dhScore">0 คะแนน</span>
+          </div>
+          <div class="dh-verdict" id="dhVerdict">ยังไม่ได้ติ๊กอะไรเลย — เว็บแสดงผลอย่างเดียว = เคสง่ายแน่นอน</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASES: golden rule -->
+    <section id="phases" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-layers"></use></svg> กฎทองของงานทั้งโปรเจกต์: อย่าสั่งทีเดียวทั้งเว็บ</h2>
+      <p>
+        มือใหม่เกือบทุกคนเริ่มด้วยคำสั่งเดียวยาว ๆ ว่า "ทำเว็บ...ให้หน่อย มีทุกอย่างเลย" —
+        ผลคือได้ก้อนโค้ดยักษ์ที่ผิดครึ่งถูกครึ่ง แล้วแก้ไม่ถูกว่าจะเริ่มตรงไหน ลองเทียบสองวิธี
+      </p>
+
+      <div class="compare-grid">
+        <div class="compare-col compare-old">
+          <div class="compare-head"><svg class="icon"><use href="#i-alert"></use></svg> สั่งทีเดียวทั้งเว็บ</div>
+          <div class="compare-prompt">
+            <div class="cp-who">คุณพิมพ์:</div>
+            <div class="cp-msg">"ทำเว็บร้านกาแฟ มีเมนู รีวิว แผนที่ ตะกร้า ระบบสมาชิก แต้มสะสม และ..."</div>
+          </div>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-x"></use></svg> ได้โค้ดก้อนยักษ์ ตรวจไม่ไหว</li>
+            <li><svg class="icon"><use href="#i-x"></use></svg> ผิดหลายจุดพร้อมกัน ไม่รู้จะแก้อันไหนก่อน</li>
+            <li><svg class="icon"><use href="#i-x"></use></svg> AI เดารายละเอียดเองเกือบหมด ไม่ตรงใจ</li>
+            <li><svg class="icon"><use href="#i-x"></use></svg> สั่งแก้จุดเดียว พังอีกสามจุด</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-new">
+          <div class="compare-head"><svg class="icon"><use href="#i-sparkles"></use></svg> แบ่งเป็นเฟส</div>
+          <div class="compare-prompt">
+            <div class="cp-who">คุณพิมพ์:</div>
+            <div class="cp-msg">"เริ่มจากส่วนหัวก่อน..." → ตรวจ → "ต่อด้วยเมนู..." → ตรวจ → ...</div>
+          </div>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg> โค้ดโตทีละนิด ตรวจทันทุกก้าว</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> พังตรงไหน รู้ทันทีว่ามาจากคำสั่งล่าสุด</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> ทุกส่วนตรงใจ เพราะเราคุมทิศทางตลอด</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> commit ได้ทุกจุดที่ผ่าน — ย้อนกลับง่าย</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>สูตร 5 ขั้นของงานทั้งโปรเจกต์:</b>
+        <b>1)</b> คุยขอบเขตกับ AI (ยังไม่เขียนโค้ด) →
+        <b>2)</b> ให้ AI เสนอโครงและลำดับงาน →
+        <b>3)</b> สร้างโครงหลักให้เปิดได้ก่อน →
+        <b>4)</b> เติมทีละส่วน ทดสอบทุกครั้ง commit เมื่อผ่าน →
+        <b>5)</b> ขัดเงาท้ายสุด — เคสง่ายใช้ขั้น 3–5 พอ เคสซับซ้อนใช้ครบทั้งห้า</div>
+      </div>
+    </section>
+
+    <!-- CASE 1: SIMPLE -->
+    <section id="simple" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-play"></use></svg> เคสที่ 1: เว็บง่าย — ร้านกาแฟหน้าเดียว จบใน 4 คำสั่ง</h2>
+      <p>
+        ดูของจริงกันเลย: สร้างเว็บร้าน "บ้านกาแฟ" ตั้งแต่หน้าว่างจนเสร็จสมบูรณ์
+        กด "เริ่มสร้าง" แล้วดูว่าแต่ละคำสั่ง<b>ต่อยอดจากของเดิม</b>ยังไง —
+        โค้ดด้านขวาไฮไลต์เฉพาะบรรทัดที่เพิ่มใหม่ และ<b>พรีวิวคือเว็บจริงที่เลื่อนดูได้</b>
+      </p>
+
+      <div class="vs2 bt" id="bt">
+        <div class="vs2-chat">
+          <div class="vs2-pane-head">
+            <svg class="icon"><use href="#i-chat"></use></svg> แชตกับ AI
+            <span class="vs2-turn" id="btTurn">ยังไม่เริ่ม</span>
+          </div>
+          <div class="vs2-msgs" id="btMsgs">
+            <div class="vs2-empty" id="btEmpty">กด "เริ่มสร้าง" ด้านล่าง<br />เพื่อดูการสร้างเว็บทั้งหน้าทีละคำสั่ง</div>
+          </div>
+        </div>
+        <div class="vs2-right">
+          <div class="vs2-pane-head">
+            <svg class="icon"><use href="#i-code"></use></svg> index.html
+            <span class="vs2-ver" id="btVer"></span>
+          </div>
+          <div class="vs2-code" id="btCode">
+            <div class="vs2-code-idle">โค้ดทั้งไฟล์จะอยู่ที่นี่ · บรรทัดใหม่ไฮไลต์สีเขียว</div>
+          </div>
+          <div class="vs2-pane-head vs2-prev-head">
+            <svg class="icon"><use href="#i-eye"></use></svg> เว็บจริง (เลื่อนดูได้)
+          </div>
+          <iframe class="vs2-preview" id="btPreview" title="เว็บร้านกาแฟที่กำลังสร้าง" sandbox="allow-scripts"></iframe>
+        </div>
+      </div>
+
+      <div class="vs2-controls">
+        <button class="btn btn-primary btn-sm" id="btStart"><svg class="icon"><use href="#i-play"></use></svg> เริ่มสร้าง</button>
+        <button class="btn btn-ghost btn-sm" id="btNext" disabled>คำสั่งถัดไป →</button>
+        <button class="btn btn-ghost btn-sm" id="btReset"><svg class="icon"><use href="#i-refresh"></use></svg> เริ่มใหม่</button>
+        <div class="vs2-dots" id="btDots" aria-hidden="true"></div>
+      </div>
+      <div class="vs2-lesson" id="btLesson">บทเรียนของแต่ละขั้นจะสรุปให้ตรงนี้</div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>สังเกตให้ดี:</b> ทั้ง 4 คำสั่งไม่มีคำว่า "ทำเว็บทั้งหมดให้หน่อย" เลย —
+        ทุกคำสั่ง<b>สั้น เฉพาะเจาะจง และอ้างถึงของที่มีอยู่แล้ว</b> ("ใต้ส่วนหัว", "ท้ายหน้า")
+        นี่คือหน้าตาของ Vibe Coding ระดับโปรเจกต์ในเคสง่าย</div>
+      </div>
+    </section>
+
+    <!-- CASE 2: COMPLEX -->
+    <section id="complex" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-map"></use></svg> เคสที่ 2: เว็บซับซ้อน — ระบบสั่งกาแฟออนไลน์ทั้งร้าน</h2>
+      <p>
+        คราวนี้โจทย์ใหญ่ขึ้นมาก: ร้านเดิมอยากได้<b>ระบบสั่งซื้อจริง</b> —
+        ลูกค้าเลือกเมนู หยิบใส่ตะกร้า ปรับจำนวน เห็นยอดรวม และร้านเห็นคำสั่งซื้อ
+        งานแบบนี้<b>สั่งรวดเดียวไม่มีทางรอด</b> ต้องเดินเป็น Milestone — คลิกดูทีละด่าน
+        แต่ละด่านมี prompt ตั้งต้นให้<b>คัดลอกไปใช้ได้เลย</b>
+      </p>
+
+      <div class="acc" id="msAcc">
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">M1</span>
+            <span class="acc-title">วางแผนกับ AI — ห้ามเขียนโค้ดเด็ดขาด</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>เป้าหมาย:</b> ได้ "พิมพ์เขียว" ของทั้งระบบก่อนลงมือ — มีหน้าอะไรบ้าง เก็บข้อมูลอะไร และสร้างลำดับไหนก่อนหลัง แล้วบันทึกเป็นไฟล์ <b>SPEC.md</b> ไว้ใช้อ้างอิงตลอดโปรเจกต์</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">prompt ตั้งต้น</div>
+              <pre class="code-block"><code>ผมอยากทำเว็บสั่งกาแฟออนไลน์ของร้านเดียว ผู้ใช้เลือกเมนู
+หยิบใส่ตะกร้า ปรับจำนวน และเห็นสรุปยอด — อย่าเพิ่งเขียนโค้ด
+ช่วยเสนอ: (1) รายการหน้าทั้งหมด (2) ข้อมูลที่ต้องเก็บ
+(3) ลำดับการสร้างทีละขั้นจากง่ายไปยาก พร้อมเหตุผล</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+            <p><b>เช็กก่อนผ่านด่าน:</b> อ่านแผนแล้วเข้าใจทุกข้อ · ตัดฟีเจอร์ที่ยังไม่จำเป็นออก (แต้มสะสม? ไว้ทีหลัง!) · บันทึกเป็น SPEC.md ในโปรเจกต์</p>
+            <div class="callout callout-warn">
+              <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+              <div><b>กับดัก:</b> ข้ามด่านนี้เพราะ "อยากเห็นเว็บเร็ว ๆ" คือสาเหตุอันดับหนึ่งของโปรเจกต์พัง —
+              โค้ดที่ไม่มีแผนจะมั่วตั้งแต่โครง และแก้ทีหลังแพงกว่าวางแผนก่อนเสมอ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">M2</span>
+            <span class="acc-title">โครงเว็บ + เมนูนำทาง — ทุกหน้าเปิดได้ (ข้อมูลปลอมไปก่อน)</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>เป้าหมาย:</b> โครงกระดูกของทั้งเว็บ — หน้าเมนู หน้าตะกร้า หน้าสรุปออเดอร์ เปิดได้ครบ มีแถบนำทางเชื่อมถึงกันหมด เนื้อหาใช้ข้อมูลตัวอย่างไปก่อน ยังไม่ต้องมีฟีเจอร์จริง</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">prompt ตั้งต้น</div>
+              <pre class="code-block"><code>นี่คือ SPEC ของโปรเจกต์: [วางเนื้อหา SPEC.md]
+ช่วยสร้าง "โครง" ก่อน: ทุกหน้าตาม SPEC เปิดได้จริง
+มีแถบเมนูนำทางครบ ใช้ข้อมูลตัวอย่างไปก่อน
+ยังไม่ต้องทำระบบตะกร้า — เอาแค่โครงสวย ๆ ที่คลิกได้ทั่ว</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+            <p><b>เช็กก่อนผ่านด่าน:</b> คลิกไปได้ครบทุกหน้า ไม่มีลิงก์ตาย · หน้าตาโดยรวมโอเค · <b>git commit "โครงเว็บครบทุกหน้า"</b></p>
+            <div class="callout callout-warn">
+              <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+              <div><b>กับดัก:</b> อย่าใจร้อนใส่ฟีเจอร์จริงในด่านนี้ — ถ้าโครงยังขยับอยู่แล้วรีบใส่ระบบตะกร้า
+              พอแก้โครงทีเดียว ฟีเจอร์พังหมดต้องทำใหม่</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">M3</span>
+            <span class="acc-title">ฟีเจอร์หัวใจ: เมนู → ตะกร้า → สรุปยอด (ทดสอบหนักที่สุดตรงนี้)</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>เป้าหมาย:</b> เส้นทางหลักของผู้ใช้ทำงานได้จริงครบวงจร: กด "ใส่ตะกร้า" จากหน้าเมนู → ไปหน้าตะกร้าเห็นรายการ → เพิ่ม/ลดจำนวน ลบรายการ → ยอดรวมคำนวณถูก</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">prompt ตั้งต้น</div>
+              <pre class="code-block"><code>โครงเว็บเสร็จแล้ว ต่อไปทำระบบตะกร้าตาม SPEC:
+กดใส่ตะกร้าจากหน้าเมนูได้ หน้าตะกร้าแสดงรายการ
+เพิ่ม/ลดจำนวน ลบรายการได้ และยอดรวมต้องคำนวณใหม่ทุกครั้ง
+ทำทีละหน้า เริ่มจากปุ่ม "ใส่ตะกร้า" ก่อน</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+            <p><b>เช็กก่อนผ่านด่าน (ทดสอบเคสแปลก ๆ ด้วย):</b> ใส่ของชิ้นเดิมซ้ำ ๆ · ลดจำนวนจนเหลือ 0 · ลบจนตะกร้าว่าง · กดปุ่มรัว ๆ — ยอดรวมต้องถูกทุกกรณี · <b>commit เมื่อผ่าน</b></p>
+            <div class="callout callout-warn">
+              <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+              <div><b>กับดัก:</b> บั๊กของเว็บซับซ้อนชอบซ่อนที่ "ข้อมูลข้ามหน้า" (หยิบของหน้านี้ ไปโผล่อีกหน้า)
+              เหมือนบั๊ก 120→1201 ของสัปดาห์ก่อน แต่ตามยากกว่า — ทดสอบด่านนี้ให้หนักที่สุดในโปรเจกต์</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button type="button" class="acc-head">
+            <span class="acc-num">M4</span>
+            <span class="acc-title">จำข้อมูลจริง + ขัดเงา + ปล่อยของ</span>
+            <svg class="icon acc-chev"><use href="#i-chev"></use></svg>
+          </button>
+          <div class="acc-body">
+            <p><b>เป้าหมาย:</b> ตะกร้าไม่หายเมื่อรีเฟรชหรือปิดเบราว์เซอร์ (ใช้ <b>localStorage</b> — กล่องเก็บข้อมูลเล็ก ๆ ในเบราว์เซอร์ของผู้ใช้) แล้วค่อยขัดเงา: responsive, อนิเมชัน, ความสวย สุดท้าย push ขึ้น GitHub Pages</p>
+            <div class="pat-ex">
+              <div class="pat-ex-head">prompt ตั้งต้น</div>
+              <pre class="code-block"><code>ระบบตะกร้าทำงานถูกแล้ว ช่วยทำให้ตะกร้า "จำได้"
+ด้วย localStorage: รีเฟรชหรือปิดเปิดใหม่ รายการต้องยังอยู่
+เสร็จแล้วอธิบายให้ผมฟังด้วยว่าเก็บอะไรไว้ตรงไหน</code></pre>
+              <button type="button" class="copy-btn">คัดลอก</button>
+            </div>
+            <p><b>เช็กก่อนผ่านด่าน:</b> ใส่ของ → ปิดเบราว์เซอร์ → เปิดใหม่ ตะกร้ายังอยู่ · ลองบนจอมือถือ · <b>commit แล้ว push ขึ้น GitHub Pages</b></p>
+            <div class="callout callout-warn">
+              <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+              <div><b>กับดัก:</b> อย่าเอา "ขัดเงา" ขึ้นก่อนฟีเจอร์เสร็จ — เว็บสวยที่คิดเงินผิด แย่กว่าเว็บเรียบ ๆ ที่คิดเงินถูก</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <svg class="icon icon-lg"><use href="#i-sparkles"></use></svg>
+        <div><b>หัวใจของเคสซับซ้อน:</b> แต่ละ Milestone คือ "เว็บที่ยังใช้งานได้" เสมอ —
+        เราไม่เคยอยู่ในสภาพ "พังยาวสามวันเพราะทำหลายอย่างพร้อมกัน"
+        และทุกด่านจบด้วย commit จึงย้อนกลับได้ตลอดเวลา</div>
+      </div>
+    </section>
+
+    <!-- CONTROL: managing long projects -->
+    <section id="control" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-cpu"></use></svg> เทคนิคคุมโปรเจกต์ยาว ๆ ไม่ให้หลุดมือ</h2>
+      <p>
+        พอโปรเจกต์ใหญ่ขึ้น ศัตรูตัวใหม่จะโผล่มา: <b>AI จำรายละเอียดทั้งหมดไม่ไหว</b>
+        (บทสนทนายาวเกิน มันจะเริ่ม "ลืม" ของที่คุยไว้ตอนต้น) — มืออาชีพจัดการแบบนี้
+      </p>
+
+      <ol class="steps">
+        <li><b>SPEC.md คือสมองสำรอง</b> — เก็บแผนไว้ในไฟล์ ไม่ใช่ในแชต เริ่มเซสชันใหม่เมื่อไหร่ก็วาง SPEC ให้ AI อ่านก่อน มันจะรู้บริบททั้งหมดใน 10 วินาที</li>
+        <li><b>ขอ "สรุปสถานะ" เป็นระยะ</b> — พิมพ์ว่า "สรุปให้หน่อยว่าตอนนี้ทำอะไรเสร็จแล้ว เหลืออะไร" แล้วเก็บคำตอบต่อท้าย SPEC — มีประโยชน์มากเวลาปิดคอมแล้วกลับมาทำต่อ</li>
+        <li><b>หนึ่งเซสชันแชต ต่อหนึ่งภารกิจ</b> — แชตที่คุยยาวข้ามหลายเรื่องจะยิ่งมั่ว เปลี่ยน Milestone เมื่อไหร่ เปิดแชตใหม่พร้อมวาง SPEC ดีกว่า</li>
+        <li><b>commit คือเซฟพอยต์ของเกม</b> — ผ่านด่านไหน เซฟด่านนั้น (ทวน <a href="week01.html">สัปดาห์ 1</a>) ถ้า AI แก้แล้วพังหนัก ก็ย้อนกลับไปเซฟล่าสุดได้ใน 1 คำสั่ง</li>
+        <li><b>ให้ AI ทดสอบตัวเอง</b> — ก่อนปิดงานทุกครั้ง ลองสั่งว่า "ช่วยไล่ดูโค้ดทั้งหมด มีจุดไหนน่าจะเป็นบั๊กหรือช่องโหว่ไหม" — จับได้เยอะกว่าที่คิด</li>
+      </ol>
+
+      <h3 class="sub-h">เครื่องมือก็มีผล: แชตธรรมดา vs เอเจนต์</h3>
+      <p>เคสง่ายใช้แชตธรรมดา (Claude, ChatGPT บนเว็บ) สบาย ๆ แต่เคสซับซ้อนที่มีหลายไฟล์ เครื่องมือแบบ "เอเจนต์" (เช่น <b>Claude Code</b>) จะได้เปรียบชัดเจน</p>
+      <table class="cmp-table">
+        <thead><tr><th>&nbsp;</th><th>แชตธรรมดา</th><th>เอเจนต์ (เช่น Claude Code)</th></tr></thead>
+        <tbody>
+          <tr><td>เหมาะกับ</td><td>เว็บ 1–2 ไฟล์ งานชิ้นเล็ก</td><td>โปรเจกต์หลายไฟล์ งานทั้งระบบ</td></tr>
+          <tr><td>การแก้ไฟล์</td><td>เราคัดลอกโค้ดไปวางเอง</td><td>แก้ไฟล์ในเครื่องให้เองโดยตรง</td></tr>
+          <tr><td>บริบทโปรเจกต์</td><td>ต้องวางโค้ดให้ดูใหม่ทุกครั้ง</td><td>เปิดอ่านไฟล์ในโปรเจกต์ได้เอง</td></tr>
+          <tr><td>การทดสอบ</td><td>เรารันเองแล้วรายงานผลกลับ</td><td>รันคำสั่ง/ทดสอบแล้วแก้ต่อเองได้</td></tr>
+          <tr><td>สิ่งที่เราต้องทำ</td><td>เป็นคนกลางส่งของไปมา</td><td>ตั้งโจทย์ กำกับ และตรวจรับ</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warn">
+        <svg class="icon icon-lg"><use href="#i-alert"></use></svg>
+        <div><b>พลังมากขึ้น = ต้องตรวจมากขึ้น:</b> เอเจนต์แก้หลายไฟล์ได้ในคำสั่งเดียว
+        แปลว่าพังหลายไฟล์ได้ในคำสั่งเดียวเช่นกัน — กฎ "อย่ารันสิ่งที่ไม่เข้าใจ" และ "commit ก่อนให้แก้ครั้งใหญ่"
+        ยิ่งสำคัญเป็นสองเท่า</div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP -->
+    <section id="workshop" class="card highlight-card">
+      <h2><svg class="icon icon-lg"><use href="#i-clipboard"></use></svg> โจทย์ใหญ่: สร้างเว็บทั้งโปรเจกต์ของคุณเอง</h2>
+      <p>
+        โจทย์มี 2 แทร็กให้เลือกตามความมั่นใจ — <b>แทร็ก A</b> เว็บหน้าเดียวแบบเคสที่ 1
+        หรือ <b>แทร็ก B</b> มินิเว็บแอปมีระบบจำข้อมูลแบบเคสที่ 2
+        ติ๊กเช็กพอยต์ได้ทีละข้อ (บันทึกให้อัตโนมัติในเครื่อง)
+      </p>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button type="button" class="tab-btn active" data-tab="wsa">แทร็ก A · เว็บง่าย</button>
+          <button type="button" class="tab-btn" data-tab="wsb">แทร็ก B · สายท้าทาย</button>
+        </div>
+
+      <div class="tab-panel active" id="tab-wsa">
+        <p><b>ภารกิจ:</b> เว็บ 1 หน้าธีมอิสระ (ร้านสมมุติ ชมรม วงดนตรี ทีมอีสปอร์ต — ห้ามซ้ำโปรไฟล์สัปดาห์ที่แล้ว) อย่างน้อย 4 ส่วน: ส่วนหัว เนื้อหา 2 ส่วน และส่วนติดต่อ</p>
+        <div class="ws" data-ws-key="w3wsA">
+          <div class="ws-progress-row">
+            <div class="ws-progress"><div class="ws-fill"></div></div>
+            <span class="ws-count">0 / 6</span>
+          </div>
+          <div class="ws-list">
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>1 · เขียนขอบเขต 3 บรรทัด</b><br />
+              เว็บเรื่องอะไร มีส่วนไหนบ้าง โทนสีแบบไหน — เขียนก่อนเปิดแชต</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>2 · โครงหน้า + ส่วนหัว</b><br />
+              สั่งเฉพาะส่วนหัวก่อน เปิดดูในเบราว์เซอร์ให้ผ่านตาแล้วค่อยไปต่อ</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>3 · เติมเนื้อหาทีละส่วน</b><br />
+              อย่างน้อย 2 ส่วน — แต่ละส่วน 1 คำสั่ง อ้างถึงของเดิมเสมอ ("ใต้ส่วน...")</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>4 · ขัดเงา + มือถือ</b><br />
+              เอฟเฟกต์ชี้เมาส์ 1 อย่าง + สั่งให้ดูดีบนจอมือถือ (ลองย่อหน้าต่างดู)</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>5 · ทดสอบ + แก้มือ 1 จุด</b><br />
+              ไล่ดูทุกส่วน แล้วแก้อะไรเองด้วยมือ 1 จุดโดยไม่ใช้ AI</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>6 · push ขึ้น GitHub + เปิด Pages</b><br />
+              commit อย่างน้อย 3 ครั้งระหว่างทาง — เว็บของคุณออนไลน์จริงแล้ว</span></label>
+          </div>
+          <div class="ws-done" hidden>
+            <svg class="icon icon-lg"><use href="#i-award"></use></svg>
+            ครบทุกเช็กพอยต์! เว็บทั้งโปรเจกต์ของคุณออนไลน์แล้ว
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-wsb">
+        <p><b>ภารกิจ:</b> มินิเว็บแอป "รายการโปรด" ธีมอิสระ (เมนูร้าน เพลง เกม หนังสือ) — มีหน้ารายการ กดเพิ่มเข้า "ลิสต์ของฉัน" ปรับ/ลบได้ เห็นจำนวนรวม และจำข้อมูลไว้แม้ปิดเบราว์เซอร์</p>
+        <div class="ws" data-ws-key="w3wsB">
+          <div class="ws-progress-row">
+            <div class="ws-progress"><div class="ws-fill"></div></div>
+            <span class="ws-count">0 / 6</span>
+          </div>
+          <div class="ws-list">
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>1 · ทำ SPEC กับ AI</b><br />
+              แบบ M1: ให้ AI เสนอหน้า/ข้อมูล/ลำดับงาน — ยังไม่เขียนโค้ด บันทึกเป็น SPEC.md</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>2 · โครง + นำทางครบ</b><br />
+              ทุกส่วนเปิดได้ ข้อมูลปลอมไปก่อน — commit "โครงเสร็จ"</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>3 · ฟีเจอร์หัวใจ</b><br />
+              เพิ่ม/ลบ/ปรับรายการได้ ตัวนับรวมถูกต้อง — ทดสอบเคสแปลก: ลบหมด, เพิ่มซ้ำ, กดรัว</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>4 · จำข้อมูลด้วย localStorage</b><br />
+              รีเฟรช/ปิดเปิดใหม่ ลิสต์ต้องยังอยู่ — ให้ AI อธิบายด้วยว่าเก็บยังไง</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>5 · ขัดเงา + แก้มือ 1 จุด</b><br />
+              ปรับความสวยท้ายสุด + แก้อะไรเองด้วยมือ 1 จุด commit แยก</span></label>
+            <label class="ws-item"><input type="checkbox" />
+              <span class="ws-check"></span>
+              <span class="ws-text"><b>6 · push + Pages + README</b><br />
+              README สรุป: SPEC, prompt เด็ด ๆ ที่ใช้, บั๊กที่เจอและวิธีแก้</span></label>
+          </div>
+          <div class="ws-done" hidden>
+            <svg class="icon icon-lg"><use href="#i-award"></use></svg>
+            สายท้าทายพิชิตครบทุกด่าน! มินิเว็บแอปของคุณออนไลน์แล้ว
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-award"></use></svg> แบบทดสอบท้ายบท</h2>
+      <p>ตอบ 6 ข้อสั้น ๆ เช็กว่าพร้อมคุมโปรเจกต์จริงแล้วหรือยัง — ตอบแล้วเฉลยทันทีทุกข้อ</p>
+      <div id="quiz3Container"></div>
+      <div class="quiz-score" id="quiz3Score"></div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="card">
+      <h2><svg class="icon icon-lg"><use href="#i-book"></use></svg> แหล่งเรียนรู้เพิ่มเติม</h2>
+      <ul class="link-list">
+        <li><a href="week01.html">ทบทวนสัปดาห์ 1 — การใช้งาน GitHub (commit / push / Pages)</a></li>
+        <li><a href="week02.html">ทบทวนสัปดาห์ 2 — พื้นฐาน Vibe Coding และการเขียน prompt</a></li>
+        <li><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">เอกสาร Claude Code — เครื่องมือเอเจนต์สำหรับโปรเจกต์หลายไฟล์</a></li>
+        <li><a href="https://docs.github.com/pages" target="_blank" rel="noopener">GitHub Pages — เผยแพร่เว็บฟรีจาก repository</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== Back to top ===== -->
+  <button class="back-top" id="backTop" aria-label="กลับขึ้นบนสุด">
+    <svg class="icon"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <script src="script.js?v=4"></script>
+  <script src="week03.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Topic 1 · สื่อการสอน — วิศวกรรมคอมพิวเตอร์</title>
+  <meta name="description" content="หน้ารวมสื่อการสอนรายวิชา Special Topic 1 — เทคโนโลยีปัจจุบันที่วิศวกรคอมพิวเตอร์ต้องรู้ ครบ 16 สัปดาห์" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+<body class="hub-body">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.26.82-.57 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.09 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.46-2.34 1.24-3.16-.12-.3-.54-1.5.12-3.12 0 0 1-.32 3.3 1.21.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.29-1.53 3.29-1.21 3.29-1.21.66 1.62.24 2.82.12 3.12.77.82 1.23 1.87 1.23 3.16 0 4.53-2.81 5.53-5.49 5.82.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .31.22.69.83.57A12.02 12.02 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9.2l-4.4 1.6L12 15l-1.6-4.2L6 9.2l4.4-1.6z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/><path d="M5 4l.6 1.6L7 6.2l-1.4.6L5 8l-.6-1.2L3 6.2l1.4-.6z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="2"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M12 9V6"/><circle cx="12" cy="4.5" r="1.5"/><path d="M9 17.5h6"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+      <symbol id="i-boxes" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+      <symbol id="i-loop" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="hub-glow" aria-hidden="true"></div>
+
+  <header class="hub-header">
+    <div class="hub-kicker">สาขาวิชาวิศวกรรมคอมพิวเตอร์</div>
+    <h1>Special&nbsp;Topic&nbsp;1<span class="grad"> · สื่อการสอน</span></h1>
+    <p class="hub-lead">หัวข้อพิเศษทางวิศวกรรมคอมพิวเตอร์ — เทคโนโลยีปัจจุบันที่ยังไม่อยู่ในหลักสูตร แต่<b>ต้องรู้ก่อนไปทำงานจริง</b> เรียนรู้จากการ<b>มอง</b> <b>ดู</b> <b>อ่าน</b> และ<b>ลงมือทำตาม</b> ครบ 16 สัปดาห์</p>
+  </header>
+
+  <main class="hub-grid">
+
+    <a class="week-card done" href="week01.html">
+      <div class="week-top">
+        <span class="week-num">01</span>
+        <span class="week-status"><svg class="icon"><use href="#i-check"></use></svg> เรียนแล้ว</span>
+      </div>
+      <span class="week-ico ico-github"><svg class="icon"><use href="#i-github"></use></svg></span>
+      <h2>รู้จักและใช้งาน GitHub</h2>
+      <p>Git ≠ GitHub, การสมัคร, อัปโหลดโปรเจกต์, คำสั่งพื้นฐาน, ทำงานเป็นทีมด้วย Pull Request และทำเว็บด้วย GitHub Pages</p>
+      <span class="week-go">เปิดบทเรียน <svg class="icon"><use href="#i-arrow"></use></svg></span>
+    </a>
+
+    <a class="week-card done" href="week02.html">
+      <div class="week-top">
+        <span class="week-num">02</span>
+        <span class="week-status"><svg class="icon"><use href="#i-check"></use></svg> เรียนแล้ว</span>
+      </div>
+      <span class="week-ico ico-vibe"><svg class="icon"><use href="#i-sparkles"></use></svg></span>
+      <h2>Vibe Coding — เขียนโค้ดยุค AI</h2>
+      <p>เขียนโปรแกรมด้วยการ "บอกสิ่งที่อยากได้" ให้ AI ช่วยสร้าง ส่องสมอง AI แบบ 3 มิติ ลองเล่นซิมูเลเตอร์จริง และฝึกตั้งคำสั่ง (prompt) แบบมืออาชีพ</p>
+      <span class="week-go">เปิดบทเรียน <svg class="icon"><use href="#i-arrow"></use></svg></span>
+    </a>
+
+    <a class="week-card new" href="week03.html">
+      <div class="week-top">
+        <span class="week-num">03</span>
+        <span class="week-status status-new"><svg class="icon"><use href="#i-sparkles"></use></svg> ใหม่ล่าสุด</span>
+      </div>
+      <span class="week-ico ico-vibe"><svg class="icon"><use href="#i-rocket"></use></svg></span>
+      <h2>Vibe Coding ทั้งโปรเจกต์ — เว็บง่ายถึงซับซ้อน</h2>
+      <p>ยกระดับจากสั่งทีละชิ้น สู่การสร้างเว็บทั้งโครงการ ผ่าน 2 เคสจริง: เว็บหน้าเดียวจบใน 4 คำสั่ง และเว็บแอปซับซ้อนที่เดินเป็น Milestone</p>
+      <span class="week-go">เปิดบทเรียน <svg class="icon"><use href="#i-arrow"></use></svg></span>
+    </a>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">04</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-globe"></use></svg></span>
+      <h2>Deploy เว็บสู่โลกจริง</h2>
+      <p>จาก localhost สู่ URL ที่ใครก็เปิดได้: GitHub Pages ขั้นสูง, Netlify/Vercel, โดเมนของตัวเอง, HTTPS และเช็กลิสต์ก่อนปล่อยเว็บให้โลกเห็น</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">05</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-zap"></use></svg></span>
+      <h2>ต่อพลัง AI เข้าแอปของเรา — LLM API</h2>
+      <p>เรียกใช้โมเดล AI ผ่าน API สร้างแชตบอตของตัวเองตัวแรก เข้าใจ token กับค่าใช้จ่าย และวิธีเก็บ API key ให้ปลอดภัย</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">06</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-bot"></use></svg></span>
+      <h2>AI Agents &amp; MCP — ให้ AI ลงมือทำแทนเรา</h2>
+      <p>จากแชตบอตที่ "ตอบ" สู่เอเจนต์ที่ "ทำ": AI ที่ใช้เครื่องมือได้เอง ทำงานหลายขั้นตอนอัตโนมัติ และมาตรฐาน MCP ที่กำลังเปลี่ยนวงการ</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">07</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-db"></use></svg></span>
+      <h2>ฐานข้อมูล + Backend สำเร็จรูป</h2>
+      <p>เก็บข้อมูลจริงให้เว็บแอปด้วย Supabase/Firebase: ตาราง, ระบบล็อกอิน, API อัตโนมัติ — โดยไม่ต้องเขียนเซิร์ฟเวอร์เองสักบรรทัด</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">08</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-boxes"></use></svg></span>
+      <h2>Docker &amp; Containers</h2>
+      <p>แก้ปัญหาโลกแตก "บนเครื่องผมรันได้นะ": จับแอปพร้อมทุกอย่างที่มันต้องใช้ใส่กล่อง แล้วรันที่ไหนก็ได้ผลเหมือนกันเป๊ะ</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">09</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-loop"></use></svg></span>
+      <h2>CI/CD &amp; GitHub Actions</h2>
+      <p>ให้หุ่นยนต์ทำงานซ้ำ ๆ แทนเรา: push โค้ดปุ๊บ ระบบทดสอบอัตโนมัติ ผ่านแล้วเว็บอัปเดตเอง — วิธีทำงานมาตรฐานของบริษัทซอฟต์แวร์ยุคนี้</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">10</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-cloud"></use></svg></span>
+      <h2>Cloud Computing เบื้องต้น</h2>
+      <p>รู้จัก AWS / Google Cloud / Azure: เว็บใหญ่ ๆ ของโลกรันอยู่ที่ไหน, serverless คืออะไร, คิดเงินยังไง และใช้ free tier ให้เป็น</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">11</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-shield"></use></svg></span>
+      <h2>Cybersecurity ยุค AI</h2>
+      <p>ช่องโหว่ยอดฮิตที่เว็บจริงโดนบ่อย, API key รั่วบน GitHub, prompt injection และวิธีตรวจความปลอดภัยของโค้ดที่ AI เขียนให้</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">12</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-chip"></use></svg></span>
+      <h2>IoT &amp; Edge AI</h2>
+      <p>ต่อโลกจริงเข้ากับโค้ด: ไมโครคอนโทรลเลอร์ + เซนเซอร์ ส่งข้อมูลขึ้นเว็บ สั่งงานผ่านมือถือ และรัน AI บนอุปกรณ์เล็ก ๆ</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">13</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-chart"></use></svg></span>
+      <h2>Data + AI วิเคราะห์ข้อมูล</h2>
+      <p>ให้ AI ช่วยอ่านข้อมูลดิบเป็นคำตอบ: Python notebook, ทำความสะอาดข้อมูล, สร้างกราฟ และเล่าเรื่องจากตัวเลขอย่างที่บริษัทต้องการ</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">14</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-pen"></use></svg></span>
+      <h2>ออกแบบ UX/UI ยุค AI</h2>
+      <p>ทำไมบางเว็บใช้แล้ว "ลื่น" บางเว็บใช้แล้วหงุดหงิด: หลักการออกแบบพื้นฐาน, Figma, และเวิร์กโฟลว์ design-to-code ด้วย AI</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">15</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-trophy"></use></svg></span>
+      <h2>โปรเจกต์จริง — สร้างผลงานของตัวเอง</h2>
+      <p>รวมทุกอย่างที่เรียนมา สร้างเว็บแอปจริง 1 ชิ้นตั้งแต่ไอเดียถึง deploy: วางสโคป, ไล่ Milestone, ใช้ AI เป็นคู่หู และเก็บลง portfolio</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+    <div class="week-card soon" aria-disabled="true">
+      <div class="week-top">
+        <span class="week-num">16</span>
+        <span class="week-status"><svg class="icon"><use href="#i-lock"></use></svg> เร็ว ๆ นี้</span>
+      </div>
+      <span class="week-ico ico-soon"><svg class="icon"><use href="#i-briefcase"></use></svg></span>
+      <h2>เตรียมสู่โลกทำงาน</h2>
+      <p>เปลี่ยนสิ่งที่เรียนเป็นโอกาสงาน: แต่ง GitHub profile ให้ recruiter หยุดดู, portfolio + resume ยุค AI และการนำเสนอผลงานของตัวเอง</p>
+      <span class="week-go dim">ยังไม่เปิด</span>
+    </div>
+
+  </main>
+
+  <footer class="hub-foot">
+    <small>สื่อการสอน Special Topic 1 · สาขาวิชาวิศวกรรมคอมพิวเตอร์ — เลือกสัปดาห์เพื่อเริ่มเรียน</small>
+  </footer>
+
+</body>
+</html>
